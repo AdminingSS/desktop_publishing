@@ -46,8 +46,8 @@ h1 {
 .tm-switch {
   position: relative;
   display: inline-block;
-  width: 60px;
-  height: 34px; }
+  width: 30px;
+  height: 15px; }
 
 /* Hide default HTML checkbox */
 .tm-switch input {
@@ -68,10 +68,10 @@ h1 {
 .tm-sliderbox:before {
   position: absolute;
   content: "";
-  height: 26px;
-  width: 26px;
-  left: 4px;
-  bottom: 4px;
+  height: 11px;
+  width: 11px;
+  left: 2px;
+  bottom: 2px;
   background-color: white;
   -webkit-transition: .4s;
   transition: .4s; }
@@ -83,15 +83,21 @@ input:focus + .tm-sliderbox {
   box-shadow: 0 0 1px #d81cff; }
 
 input:checked + .tm-sliderbox:before {
-  -webkit-transform: translateX(26px);
-  -ms-transform: translateX(26px);
-  transform: translateX(26px); }
+  -webkit-transform: translateX(15px);
+  -ms-transform: translateX(15px);
+  transform: translateX(15px); }
 
 /* Rounded sliders */
 .tm-sliderbox.tm-sliderbox-round {
-  border-radius: 34px; }
+  border-radius: 15px; }
 
 .tm-sliderbox.tm-sliderbox-round:before {
   border-radius: 50%; }
+
+.tm-small-font-size {
+  font-size: 14px; }
+
+.tm-color-global {
+  color: #000000; }
 
 /*# sourceMappingURL=main.css.map */

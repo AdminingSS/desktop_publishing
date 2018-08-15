@@ -56,7 +56,9 @@
 
                 </div>
 
-                <button class="tm-button tm-button-default uk-button uk-border-rounded" href="#sendModal" uk-toggle>Распознать</button>
+                <button class="tm-button tm-button-default uk-button uk-border-rounded" href="#sendModal" uk-toggle>
+                    Распознать
+                </button>
             </div>
 
         </div>
@@ -75,20 +77,24 @@
     <div class="tm-background-modal uk-modal-dialog uk-modal-body uk-border-rounded uk-margin-auto-vertical uk-text-center">
         <a href="" class="tm-modal-close uk-modal-close-outside" uk-close="ratio: 1.5"></a>
 
-        <form id="sendForm" action="mail/mailer.php" enctype="multipart/form-data" method="post" class="uk-flex uk-flex-column">
+        <form id="sendForm" action="mail/mailer.php" enctype="multipart/form-data" method="post"
+              class="uk-flex uk-flex-column">
             <div class="uk-margin uk-width-1-1">
                 <div class="tm-highlight">
-                    <input class="tm-input uk-input uk-border-rounded" name="file" type="file" placeholder="Выберите файл для распознавания">
+                    <input class="tm-input uk-input uk-border-rounded" name="file" type="file"
+                           placeholder="Выберите файл для распознавания">
                 </div>
             </div>
             <div class="uk-margin uk-width-1-1">
                 <div class="tm-highlight">
-                    <input class="tm-input uk-input uk-border-rounded" name="email" type="email" placeholder="Ваша эл. почта">
+                    <input class="tm-input uk-input uk-border-rounded" name="email" type="email"
+                           placeholder="Ваша эл. почта">
                 </div>
             </div>
             <div class="uk-margin uk-width-1-1">
                 <div class="tm-highlight">
-                    <textarea class="tm-input uk-textarea uk-border-rounded" name="message" rows="5" placeholder="Ваши пожелания"></textarea>
+                    <textarea class="tm-input uk-textarea uk-border-rounded" name="message" rows="5"
+                              placeholder="Ваши пожелания"></textarea>
                 </div>
             </div>
             <div class="uk-margin uk-width-1-1">
@@ -99,19 +105,28 @@
                     <option value="3">Евро</option>
                 </select>
             </div>
-
-            <div class="uk-margin">
+<div class="uk-margin uk-width-1-1">
+            <div class="uk-flex uk-flex-middle">
                 <label class="tm-switch">
-                    <input type="checkbox">
+                    <input type="checkbox" name="markup">
                     <span class="tm-sliderbox tm-sliderbox-round"></span>
                 </label>
-                <label class="tm-switch">
-                    <input type="checkbox">
-                    <span class="tm-sliderbox tm-sliderbox-round"></span>
+                <label class="tm-small-font-size tm-color-global uk-padding-small uk-padding-remove-vertical">
+                    Сверстать документ после перевода
                 </label>
             </div>
-
-            <button type="submit" class="tm-button tm-button-primary uk-button uk-border-rounded">Отправить заявку</button>
+            <div class="uk-flex uk-flex-middle">
+                <label class="tm-switch">
+                    <input type="checkbox" name="urgent">
+                    <span class="tm-sliderbox tm-sliderbox-round"></span>
+                </label>
+                <label class="tm-small-font-size tm-color-global uk-padding-small">
+                    Результат нужен срочно!
+                </label>
+            </div>
+</div>
+            <button type="submit" class="tm-button tm-button-primary uk-button uk-border-rounded">Отправить заявку
+            </button>
         </form>
 
     </div>
