@@ -75,7 +75,7 @@
     <div class="tm-background-modal uk-modal-dialog uk-modal-body uk-border-rounded uk-margin-auto-vertical uk-text-center">
         <a href="" class="tm-modal-close uk-modal-close-outside" uk-close="ratio: 1.5"></a>
 
-        <form id="sendForm" action="mail/mailer.php" method="post" class="uk-flex uk-flex-column">
+        <form id="sendForm" action="mail/mailer.php" enctype="multipart/form-data" method="post" class="uk-flex uk-flex-column">
             <div class="uk-margin uk-width-1-1">
                 <div class="tm-highlight">
                     <input class="tm-input uk-input uk-border-rounded" name="file" type="file" placeholder="Выберите файл для распознавания">
@@ -98,6 +98,10 @@
                     <option value="2">Доллары</option>
                     <option value="3">Евро</option>
                 </select>
+            </div>
+
+            <div class="uk-margin">
+                Тут должны быть переключатели
             </div>
 
             <button type="submit" class="tm-button tm-button-primary uk-button uk-border-rounded">Отправить заявку</button>
