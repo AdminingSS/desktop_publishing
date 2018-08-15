@@ -1,0 +1,23 @@
+@import url("https://fonts.googleapis.com/css?family=PT+Sans:400,700&subset=cyrillic");
+body {
+  font-family: "PT Sans", sans-serif;
+  font-size: 16px;
+  color: #ffffff; }
+
+h1 {
+  font-size: 28px;
+  color: #ffffff;
+  font-weight: bold; }
+
+.tm-button-default {
+  width: 140px;
+  height: 40px;
+  border-radius: 5px;
+  background-color: #ffffff;
+  box-shadow: 0 2px 4px -1px rgba(0, 0, 0, 0.1);
+  font-size: 16px;
+  font-weight: bold;
+  color: #000000;
+  text-transform: none; }
+
+/*# sourceMappingURL=main.css.map */

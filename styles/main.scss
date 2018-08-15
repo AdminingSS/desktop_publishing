@@ -1,0 +1,28 @@
+@import url('https://fonts.googleapis.com/css?family=PT+Sans:400,700&subset=cyrillic');
+@import "variables";
+
+body {
+  font-family: $global-font-family;
+  font-size: $global-font-size;
+  color: $default-color;
+}
+
+h1 {
+  font-size: $heading-font-size;
+  color: $default-color;
+  font-weight: bold;
+}
+
+.tm-button-default {
+  width: 140px;
+  height: 40px;
+
+  border-radius: 5px;
+  background-color: #ffffff;
+  box-shadow: 0 2px 4px -1px rgba(0, 0, 0, 0.1);
+
+  font-size: $global-font-size;
+  font-weight: bold;
+  color: $global-color;
+  text-transform: none;
+}
