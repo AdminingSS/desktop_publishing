@@ -50,4 +50,12 @@ $(document).ready(function () {
         $sendForm.validate(options);
     })();
 
+    //select2
+    (function () {
+        $('.tm-select').select2({
+            placeholder: 'Выберите валюту для оплаты',
+            minimumResultsForSearch: Infinity
+        });
+    })();
+
 });

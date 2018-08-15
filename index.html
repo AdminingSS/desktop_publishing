@@ -13,7 +13,8 @@
           integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.6/css/uikit.min.css"/>
-    <!--<link rel="stylesheet" href="styles/theme.css">-->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css" rel="stylesheet"/>
+
     <link rel="stylesheet" href="styles/main.css">
 </head>
 <body>
@@ -75,7 +76,9 @@
 
 <div id="sendModal" class="uk-flex-top uk-width-auto" uk-modal>
     <div class="tm-background-modal uk-modal-dialog uk-modal-body uk-border-rounded uk-margin-auto-vertical uk-text-center">
-        <a href="" class="tm-modal-close uk-modal-close-outside" uk-close="ratio: 1.5"></a>
+        <button class="tm-modal-close uk-modal-close-outside" type="button" uk-close>
+            <i class="fas fa-times"></i>
+        </button>
 
         <form id="sendForm" action="mail/mailer.php" enctype="multipart/form-data" method="post"
               class="uk-flex uk-flex-column">
@@ -97,34 +100,34 @@
                               placeholder="Ваши пожелания"></textarea>
                 </div>
             </div>
-            <div class="uk-margin uk-width-1-1">
-                <select class="tm-input uk-select uk-border-rounded">
+            <div class="uk-margin uk-width-1-1 uk-flex">
+                <select class="tm-input tm-select uk-select uk-border-rounded">
                     <option value="" disabled selected>Выберите валюту для оплаты</option>
                     <option value="1">Рубли</option>
                     <option value="2">Доллары</option>
                     <option value="3">Евро</option>
                 </select>
             </div>
-<div class="uk-margin uk-width-1-1">
-            <div class="uk-flex uk-flex-middle">
-                <label class="tm-switch">
-                    <input type="checkbox" name="markup">
-                    <span class="tm-sliderbox tm-sliderbox-round"></span>
-                </label>
-                <label class="tm-small-font-size tm-color-global uk-padding-small uk-padding-remove-vertical">
-                    Сверстать документ после перевода
-                </label>
+            <div class="uk-margin uk-width-1-1">
+                <div class="uk-flex uk-flex-middle">
+                    <label class="tm-switch">
+                        <input type="checkbox" name="markup">
+                        <span class="tm-sliderbox tm-sliderbox-round"></span>
+                    </label>
+                    <label class="tm-small-font-size tm-color-global uk-padding-small uk-padding-remove-vertical">
+                        Сверстать документ после перевода
+                    </label>
+                </div>
+                <div class="uk-flex uk-flex-middle">
+                    <label class="tm-switch">
+                        <input type="checkbox" name="urgent">
+                        <span class="tm-sliderbox tm-sliderbox-round"></span>
+                    </label>
+                    <label class="tm-small-font-size tm-color-global uk-padding-small">
+                        Результат нужен срочно!
+                    </label>
+                </div>
             </div>
-            <div class="uk-flex uk-flex-middle">
-                <label class="tm-switch">
-                    <input type="checkbox" name="urgent">
-                    <span class="tm-sliderbox tm-sliderbox-round"></span>
-                </label>
-                <label class="tm-small-font-size tm-color-global uk-padding-small">
-                    Результат нужен срочно!
-                </label>
-            </div>
-</div>
             <button type="submit" class="tm-button tm-button-primary uk-button uk-border-rounded">Отправить заявку
             </button>
         </form>
@@ -143,6 +146,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.10/js/uikit-icons.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.17.0/jquery.validate.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.17.0/additional-methods.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"></script>
 <script src="js/app.js"></script>
 
 </body>
