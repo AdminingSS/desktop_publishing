@@ -13,20 +13,46 @@ h1 {
   font-weight: bold;
 }
 
+.tm-button {
+  font-size: $global-font-size;
+  font-weight: bold;
+  text-transform: none;
+}
+
 .tm-button-default {
   width: 140px;
   height: 40px;
 
-  border-radius: 5px;
-  background-color: #ffffff;
+  background-color: $default-color;
   box-shadow: 0 2px 4px -1px rgba(0, 0, 0, 0.1);
 
-  font-size: $global-font-size;
-  font-weight: bold;
   color: $global-color;
-  text-transform: none;
+}
+
+.tm-button-primary  {
+  width: 190px;
+  height: 40px;
+
+  background-color: $primary-color;
+
+  color: $default-color;
 }
 
 .tm-background-gradient {
   background: linear-gradient(249deg, #c32aff, #9013fe);
+}
+
+.tm-background-modal {
+  background-color: $modal-background;
+}
+
+.tm-input {
+  color: $global-color;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.03);
+  border: none;
+}
+
+.tm-modal-close {
+  top: 25px;
+  right: -20px;
 }

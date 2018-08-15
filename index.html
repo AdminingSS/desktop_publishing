@@ -51,16 +51,15 @@
                         </p>
                     </div>
                     <div>
-                        <img src="images/group-20.jpg" alt="">
+                        <img class="uk-border-rounded uk-box-shadow-large" src="images/group-20.jpg" alt="">
                     </div>
 
                 </div>
 
-                <button class="tm-button-default uk-button">Распознать</button>
+                <button class="tm-button tm-button-default uk-button uk-border-rounded" href="#sendModal" uk-toggle>Распознать</button>
             </div>
 
         </div>
-
         <footer>
             <div class="uk-container">
                 <div class="uk-flex uk-flex-column uk-margin-bottom">
@@ -70,36 +69,40 @@
             </div>
         </footer>
     </div>
+</div>
 
+<div id="sendModal" class="uk-flex-top uk-width-auto" uk-modal>
+    <div class="tm-background-modal uk-modal-dialog uk-modal-body uk-border-rounded uk-margin-auto-vertical uk-text-center">
+        <a href="" class="tm-modal-close uk-modal-close-outside" uk-close="ratio: 1.5"></a>
 
-    <div id="offcanvas-overlay" uk-offcanvas="mode: push; overlay: true">
-        <div class="uk-offcanvas-bar">
-            <button class="uk-offcanvas-close" type="button" uk-close></button>
-
-            <div class="uk-card uk-flex uk-flex-center uk-margin-large-top">
-                <ul class="uk-nav">
-                    <li>
-                        <a href="index.html" class="uk-active"><span>Главная</span></a>
-                    </li>
-
-                    <li>
-                        <a href="services.html"><span>Услуги</span></a>
-                    </li>
-
-                    <li>
-                        <a href="prices.html"><span>Цены</span></a>
-                    </li>
-
-                    <li>
-                        <a href="about.html"><span>О нас</span></a>
-                    </li>
-
-                    <li>
-                        <a href="contacts.html"><span>Контакты и оплата</span></a>
-                    </li>
-                </ul>
+        <form id="sendForm" action="mail/mailer.php" method="post" class="uk-flex uk-flex-column">
+            <div class="uk-margin uk-width-1-1">
+                <div class="tm-highlight">
+                    <input class="tm-input uk-input uk-border-rounded" name="name" type="file" placeholder="Выберите файл для распознавания">
+                </div>
             </div>
-        </div>
+            <div class="uk-margin uk-width-1-1">
+                <div class="tm-highlight">
+                    <input class="tm-input uk-input uk-border-rounded" name="email" type="email" placeholder="Ваша эл. почта">
+                </div>
+            </div>
+            <div class="uk-margin uk-width-1-1">
+                <div class="tm-highlight">
+                    <textarea class="tm-input uk-textarea uk-border-rounded" name="message" rows="5" placeholder="Ваши пожелания"></textarea>
+                </div>
+            </div>
+            <div class="uk-margin uk-width-1-1">
+                <select class="tm-input uk-select">
+                    <option value="" disabled selected>Выберите валюту для оплаты</option>
+                    <option value="1">Рубли</option>
+                    <option value="2">Доллары</option>
+                    <option value="3">Евро</option>
+                </select>
+            </div>
+
+            <button type="submit" class="tm-button tm-button-primary uk-button uk-border-rounded">Отправить заявку</button>
+        </form>
+
     </div>
 </div>
 
