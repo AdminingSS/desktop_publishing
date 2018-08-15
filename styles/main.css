@@ -20,4 +20,7 @@ h1 {
   color: #000000;
   text-transform: none; }
 
+.tm-background-gradient {
+  background: linear-gradient(249deg, #c32aff, #9013fe); }
+
 /*# sourceMappingURL=main.css.map */
