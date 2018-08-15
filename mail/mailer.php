@@ -1,4 +1,5 @@
 <?php
+
 /*
 * Денис Герасимов http://rek9.ru/
 * Данный скрипт обрабатывает форм и отправляет ее на email
@@ -12,32 +13,29 @@
 */
     $subject = 'Почта пришла!!!';                      // тема письма , вместо многоточия вставьте ваш домен
     $content = '';
-    $content .= '<hr>';
 
-    if(isset($_POST['name'])) {
-        $name = substr(htmlspecialchars(trim($_POST['name'])), 0, 100);
-        $content .= '<b>Имя: </b>' . $name . '<br>';
-    }
+//    if(isset($_POST['name'])) {
+//        $name = substr(htmlspecialchars(trim($_POST['name'])), 0, 100);
+//        $content .= '<b>Имя: </b>' . $name . '<br>';
+//    }
     if(isset($_POST['email'])) {
-        $phone = substr(htmlspecialchars(trim($_POST['email'])), 0, 100);
-        $content .= '<b>Почта: </b>' . $phone . '<br>';
+        $mail = substr(htmlspecialchars(trim($_POST['email'])), 0, 100);
+        $content .= '<b>Почта: </b>' . $mail . '<br>';
     }
     if(isset($_POST['message'])) {
         $message = substr(htmlspecialchars(trim($_POST['message'])), 0, 100);
         $content .= '<b>Сообщение: </b>' . $message . '<br>';
     }
 
-	$content .= '<b>Заявка пришла со страницы:</b> ' . $_SERVER["HTTP_REFERER"] .'<br>'; // строчка, в которой передается UTM метки если есть
-    $content .= '<hr>';
     // подключаем файл класса для отправки почты
     require 'class.phpmailer.php';
 
     $mail = new PHPMailer();
-    $mail->AddAddress('kawas888@yandex.ru');      	                // кому - адрес, Имя (например, 'email@ rek9.ru','Денис Герасимов')
-    $mail->IsHTML(true);                        				// выставляем формат письма HTML 
+    $mail->AddAddress('');      	// кому - адрес (например, 'email@ rek9.ru')
+    $mail->IsHTML(true);                        				// формат письма HTML
     $mail->CharSet = "UTF-8";                   				// кодировка
-	$mail->From = "info@chistu.ru";					        	// email, с которого отправиться письмо
-	$mail->FromName = "Chistu";					    // откого письмо
+	$mail->From = "info@desktop-publishing.ru";					        	// email, с которого отправиться письмо
+	$mail->FromName = "DP";					    // от кого письмо
     $mail->Body = $content;
     $mail->Subject = $subject;
 
