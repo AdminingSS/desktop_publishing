@@ -47,7 +47,8 @@ h1 {
   position: relative;
   display: inline-block;
   width: 30px;
-  height: 15px; }
+  height: 15px;
+  min-width: 30px; }
 
 /* Hide default HTML checkbox */
 .tm-switch input {
