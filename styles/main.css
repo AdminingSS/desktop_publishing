@@ -196,4 +196,7 @@ input:checked + .tm-sliderbox:before {
   left: 99%;
   font-size: 10px; }
 
+.tm-font-global {
+  color: #000000; }
+
 /*# sourceMappingURL=main.css.map */
