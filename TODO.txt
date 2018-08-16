@@ -1,0 +1,56 @@
+- 1. Волнистая граница под 2 спанами, при ховере должна анимироваться и вызывать тултип.
+- 2. Анимированный тултип для п.1.
+- 3. Элемент загрузки файлов в форме.
++ 4. Селект в форме.
++ 5. Переключатели в форме.
+- 6. Плюсы и точки на странице и их анимация.
+- 7. Бэкграунд и его анимация.
+- 8. Расположение скрытых тултипов с точкой и линией.
++ 9. Сделать жирный крестик закрывающий форму.
+- 10. Хранение и отправка файлов вместе с формой.
+
+ submitHandler: function (form) {
+                const formData = $(form).serializeArray();
+                formData.push({
+                    name: 'file',
+                    value: files,
+                });
+
+                $.ajax({
+                    type: form.method,
+                    url: form.action,
+                    data: $.param(formData),
+                    success: function (response) {
+                        //console.log(response);
+
+                        if (response) {
+                            self.hidePending(form, self.showSuccess.bind(self, form));
+
+                            if (resolve) {
+                                resolve.call(self, form, response);
+                            }
+                        } else {
+                            self.hidePending(form, self.showError.bind(self, form));
+
+                            if (reject) {
+                                reject.call(self, form, response);
+                            }
+                        }
+
+                        self.resetForms(form);
+                    },
+                    error: function (response) {
+
+                        //console.log(response);
+                        //throw new Error(response.statusText);
+                        self.hidePending(form, self.showError.bind(self, form));
+                        self.resetForms(form);
+
+                    }
+                });
+            },
+
+
+            server: 178.21.20.23
+            login: lutsman@lookmyportfolio.com.ua
+            pass: 153759

@@ -4,7 +4,49 @@ $(document).ready(function () {
     (function () {
         $.validator.setDefaults({
             submitHandler: function (form) {
-                $(form).ajaxSubmit();
+
+                const formData = $(form).serializeArray();
+                formData.push({
+                    name: 'file',
+                    value: files,
+                });
+
+                $.ajax({
+                    type: form.method,
+                    url: form.action,
+                    data: $.param(formData),
+                    success: function (response) {
+                        //console.log(response);
+
+                        if (response) {
+                            self.hidePending(form, self.showSuccess.bind(self, form));
+
+                            if (resolve) {
+                                resolve.call(self, form, response);
+                            }
+                        } else {
+                            self.hidePending(form, self.showError.bind(self, form));
+
+                            if (reject) {
+                                reject.call(self, form, response);
+                            }
+                        }
+
+                        self.resetForms(form);
+                    },
+                    error: function (response) {
+
+                        //console.log(response);
+                        //throw new Error(response.statusText);
+                        self.hidePending(form, self.showError.bind(self, form));
+                        self.resetForms(form);
+
+                    }
+                });
+
+
+
+                //$(form).ajaxSubmit();
             }
         });
 
@@ -56,6 +98,48 @@ $(document).ready(function () {
             placeholder: 'Выберите валюту для оплаты',
             minimumResultsForSearch: Infinity
         });
+    })();
+
+    //dz
+    (function () {
+
+        $("#fileUpload").dropzone({
+            url: "../mail.mailer.php",
+            parallelUploads: 5,
+            uploadMultiple: true,
+            autoProcessQueue: false,
+            addRemoveLinks: true,
+            previewsContainer: ".dropzone-previews",
+            forceFallback: true,
+
+            init: function() {
+                dzClosure = this; // Makes sure that 'this' is understood inside the functions below.
+
+                // for Dropzone to process the queue (instead of default form behavior):
+                $(".filesend-submit").click(function (e) {
+
+                    // Make sure that the form isn't actually being sent.
+                    e.preventDefault();
+                    e.stopPropagation();
+                    dzClosure.processQueue();
+                });
+
+                //send all the form data along with the files:
+                this.on("sendingmultiple", function(data, xhr, formData) {
+                    formData.append("email", $(".filesend-email").val());
+                    formData.append("message", $(".filesend-message").val());
+                });
+            }
+
+        });
+
+    })();
+
+    //alternative file send
+    (function(){
+
+
+
     })();
 
 });
