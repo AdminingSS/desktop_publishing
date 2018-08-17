@@ -523,3 +523,22 @@ input:checked + .tm-sliderbox:before {
     border-radius: 50%;
   }
 }
+
+
+//wavify
+.wave {
+  position: absolute;
+  left:0;
+  right:0;
+  top:0;
+  bottom:0;
+  z-index: 1;
+}
+
+.wave + .wave {
+  z-index: 2;
+}
+
+.tm-z-100 {
+  z-index: 100;
+}

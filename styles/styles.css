@@ -921,4 +921,18 @@ input:checked + .tm-sliderbox:before {
     background-color: #c700ff;
     border-radius: 50%; }
 
+.wave {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: 1; }
+
+.wave + .wave {
+  z-index: 2; }
+
+.tm-z-100 {
+  z-index: 100; }
+
 /*# sourceMappingURL=styles.css.map */
