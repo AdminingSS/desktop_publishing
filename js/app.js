@@ -177,11 +177,11 @@ $(document).ready(function () {
 
         const options = {
             position: 'top',
-            content: '<div>\n' +
+            content: '<div class="uk-text-left">\n' +
             '        <h6>\n' +
             '            Заголовок\n' +
             '        </h6>\n' +
-            '        <p class="uk-margin-small">баран жираф и так далее, consectetur adipisicing elit. Asperiores dicta hic ipsam minima mollitia non placeat quaerat similique to</p>\n' +
+            '        <p class="uk-margin-small">Не тратьте ценное время на распознавание PDF-документов, картинок, схем, чертежей, сканов и прочих файлов, которые вы получаете от своих клиентов.</p>\n' +
             '    </div>'
         };
 

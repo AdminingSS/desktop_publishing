@@ -34,7 +34,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       this.tpl = {
         tooltipContainer: '<div class="jtooltip"></div>',
         tooltipInner: '<div class="jtooltip-inner"></div>',
-        tooltipArrow: '<div class="jtooltip-arrow animated bounce zoomIn"></div>'
+        tooltipArrow: '<div class="jtooltip-arrow animated bounce"></div>'
       };
       this.events = {
         beforeOpen: 'jTooltip:beforeOpen',

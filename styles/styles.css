@@ -729,4 +729,66 @@ input:checked + .tm-sliderbox:before {
   padding: 5px 0;
   cursor: pointer; }
 
+.jtooltip-t .jtooltip-arrow {
+  -webkit-animation-name: bounce-down;
+  animation-name: bounce-down;
+  -webkit-transform-origin: center bottom;
+  transform-origin: center bottom; }
+
+.jtooltip-b .jtooltip-arrow {
+  -webkit-animation-name: bounce-up;
+  animation-name: bounce-up;
+  -webkit-transform-origin: center bottom;
+  transform-origin: center top; }
+
+.jtooltip-r .jtooltip-arrow {
+  -webkit-animation-name: bounce-left;
+  animation-name: bounce-left;
+  -webkit-transform-origin: center bottom;
+  transform-origin: center bottom; }
+
+.jtooltip-l .jtooltip-arrow {
+  -webkit-animation-name: bounce-right;
+  animation-name: bounce-right;
+  -webkit-transform-origin: center bottom;
+  transform-origin: center bottom; }
+
+.animated.delay-custom-1 {
+  -webkit-animation-delay: 1.25s;
+  animation-delay: 1.25s; }
+
+.animated.delay-custom-2 {
+  -webkit-animation-delay: 1.5s;
+  animation-delay: 1.5s; }
+
+.animated.delay-custom-3 {
+  -webkit-animation-delay: 1.75s;
+  animation-delay: 1.75s; }
+
+.tm-dotline-tooltip {
+  position: relative;
+  max-width: 300px;
+  color: #000; }
+  .tm-dotline-tooltip::after {
+    position: absolute;
+    display: block;
+    content: '';
+    width: 20px;
+    height: 140px;
+    top: -130px;
+    left: 290px;
+    border-bottom: 2px solid #c700ff;
+    border-right: 2px solid #c700ff;
+    border-radius: 5px; }
+  .tm-dotline-tooltip::before {
+    position: absolute;
+    display: block;
+    content: '';
+    width: 5px;
+    height: 5px;
+    top: -130px;
+    left: 309px;
+    background-color: #c700ff;
+    border-radius: 50%; }
+
 /*# sourceMappingURL=styles.css.map */

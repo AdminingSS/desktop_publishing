@@ -31,33 +31,104 @@ $file = "";
 
 // Если поле выбора вложения не пустое - закачиваем его на сервер
 
-if (!empty($_FILES['mail_file']['tmp_name'])) {
+$picture = "";
+
+// Если поле выбора вложения не пустое - закачиваем его на сервер
+
+if(isset($_FILES)) {
+    $qmsg = '12345';
+}
+
+if (!empty($_FILES['file']['tmp_name']))
+
+{
 
     // Закачиваем файл
 
-    $path = $_FILES['mail_file']['name'];
+    $path = $_FILES['file']['name'];
 
-    if (copy($_FILES['mail_file']['tmp_name'], $path)) $file = $path;
+    if (copy($_FILES['file']['tmp_name'], $path)) $picture = $path;
+
 }
 
+$thm = $subject;
 
-// подключаем файл класса для отправки почты
-require 'class.phpmailer.php';
+$msg = $content . $qmsg;
 
-$mail = new PHPMailer();
-$mail->AddAddress('admining@mail.ru');        // кому - адрес (например, 'email@ rek9.ru')
-$mail->AddAttachment($file);
-$mail->IsHTML(true);                                        // формат письма HTML
-$mail->CharSet = "UTF-8";                                // кодировка
-$mail->From = "info@desktop-publishing.ru";                                // email, с которого отправиться письмо
-$mail->FromName = "DP";                        // от кого письмо
-$mail->Body = $content;
-$mail->Subject = $subject;
+$mail_to = 'admining@mail.ru';
 
-// отправляем наше письмо
+// Отправляем почтовое сообщение
 
-if ($mail->Send()) header('Location: ../');                 // в поле Location можно настроить переадресацию
-else {
-    die ('Mailer Error: ' . $mail->ErrorInfo);
+if(empty($picture)) mail($mail_to, $thm, $msg);
+
+else send_mail($mail_to, $thm, $msg, $picture);
+
+// Вспомогательная функция для отправки почтового сообщения с вложением
+
+function send_mail($to, $thm, $html, $path)
+
+{
+
+    $fp = fopen($path,"r");
+
+    if (!$fp)
+
+    {
+
+        print "Файл $path не может быть прочитан";
+
+        exit();
+
+    }
+
+    $file = fread($fp, filesize($path));
+
+    fclose($fp);
+
+
+
+    $boundary = "--".md5(uniqid(time())); // генерируем разделитель
+
+    $headers .= "MIME-Version: 1.0\n";
+
+    $headers .="Content-Type: multipart/mixed; boundary=\"$boundary\"\n";
+
+    $multipart .= "--$boundary\n";
+
+    $kod = 'koi8-r'; // или $kod = 'windows-1251';
+
+    $multipart .= "Content-Type: text/html; charset=$kod\n";
+
+    $multipart .= "Content-Transfer-Encoding: Quot-Printed\n\n";
+
+    $multipart .= "$html\n\n";
+
+
+
+    $message_part = "--$boundary\n";
+
+    $message_part .= "Content-Type: application/octet-stream\n";
+
+    $message_part .= "Content-Transfer-Encoding: base64\n";
+
+    $message_part .= "Content-Disposition: attachment; filename = \"".$path."\"\n\n";
+
+    $message_part .= chunk_split(base64_encode($file))."\n";
+
+    $multipart .= $message_part."--$boundary--\n";
+
+
+
+    if(!mail($to, $thm, $multipart, $headers))
+
+    {
+
+        echo "К сожалению, письмо не отправлено";
+
+        exit();
+
+    }
+
 }
+
 ?>
