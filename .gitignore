@@ -3,5 +3,4 @@
 _aux/
 /node_modules/
 node_modules/
-package.json
-yarn.lock
+/yarn.lock
