@@ -1,5 +1,3 @@
-@import url('https://fonts.googleapis.com/css?family=PT+Sans:400,700&subset=cyrillic');
-@import "variables";
 
 body {
   font-family: $global-font-family;
@@ -285,7 +283,7 @@ input:checked + .tm-sliderbox:before {
 
 //tooltip
 
-.tooltip-inner {
+.jtooltip-inner {
   background-color: $default-color;
   width: 300px;
   padding: 20px;
@@ -293,7 +291,7 @@ input:checked + .tm-sliderbox:before {
   color: $global-color;
 }
 
-.tooltip-arrow {
-  border: 10px solid transparent;
-  border-top: red;
+.tm-tooltip {
+  padding: 5px 0;
+  cursor: pointer;
 }

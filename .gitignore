@@ -4,3 +4,4 @@ _aux/
 /node_modules/
 node_modules/
 /yarn.lock
+/js/jTooltip.es6.js

@@ -174,18 +174,33 @@ $(document).ready(function () {
     (function () {
 
         const $reference = $('.tm-tooltip');
-        $reference.each(function () {
-            const ref = this;
-            const anotherPopper = new Tooltip(ref, {
-                title: '<div>\n' +
-                '        <h6>\n' +
-                '            Заголовок\n' +
-                '        </h6>\n' +
-                '        <p class="uk-margin-small">баран жираф и так далее, consectetur adipisicing elit. Asperiores dicta hic ipsam minima mollitia non placeat quaerat similique to</p>\n' +
-                '    </div>',
-                html: true
-            });
-        });
+
+        const options = {
+            position: 'top',
+            content: '<div>\n' +
+            '        <h6>\n' +
+            '            Заголовок\n' +
+            '        </h6>\n' +
+            '        <p class="uk-margin-small">баран жираф и так далее, consectetur adipisicing elit. Asperiores dicta hic ipsam minima mollitia non placeat quaerat similique to</p>\n' +
+            '    </div>'
+        };
+
+        $reference.jTooltip(options);
+
+        // $reference.each(function () {
+        //     const ref = this;
+        //     const anotherPopper = new Tooltip(ref, {
+        //         title: '<div>\n' +
+        //         '        <h6>\n' +
+        //         '            Заголовок\n' +
+        //         '        </h6>\n' +
+        //         '        <p class="uk-margin-small">баран жираф и так далее, consectetur adipisicing elit. Asperiores dicta hic ipsam minima mollitia non placeat quaerat similique to</p>\n' +
+        //         '    </div>',
+        //         html: true,
+        //         placement: top,
+        //         offset : '20px'
+        //     });
+        // });
 
     })();
 
