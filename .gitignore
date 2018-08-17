@@ -5,3 +5,4 @@ _aux/
 node_modules/
 /yarn.lock
 /js/jTooltip.es6.js
+/TODO.txt
