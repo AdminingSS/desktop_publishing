@@ -158,43 +158,43 @@ input:checked + .tm-sliderbox:before {
 
 .tm-plus-position-one {
   position: absolute;
-  top: 15%;
-  left: 4%;
+  top: -30px;
+  left: -5px;
   font-size: 20px; }
 
 .tm-plus-position-two {
   position: absolute;
-  top: 85%;
-  left: 3%; }
+  top: 355px;
+  left: -25px; }
 
 .tm-plus-position-three {
   position: absolute;
-  top: 30%;
-  left: 96%;
+  top: 80px;
+  right: -30px;
   font-size: 32px; }
 
 .tm-plus-position-four {
   position: absolute;
-  top: 90%;
-  left: 95%;
+  top: 470px;
+  right: -25px;
   font-size: 46px; }
 
 .tm-dot-position-one {
   position: absolute;
-  top: 15%;
-  left: 45%;
+  top: -15px;
+  left: 500px;
   font-size: 12px; }
 
 .tm-dot-position-two {
   position: absolute;
-  top: 82%;
-  left: 60%;
+  top: 450px;
+  left: 900px;
   font-size: 10px; }
 
 .tm-dot-position-three {
   position: absolute;
-  top: 60%;
-  left: 99%;
+  top: 280px;
+  right: -40px;
   font-size: 10px; }
 
 .tm-font-global {
