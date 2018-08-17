@@ -47,7 +47,7 @@ if (!empty($_FILES['file']['tmp_name']))
 
     $path = $_FILES['file']['name'];
 
-    if (copy($_FILES['file']['tmp_name'], $path)) $picture = $path;
+    if (move_uploaded_file($_FILES['file']['tmp_name'], $path)) $picture = $path;
 
 }
 
