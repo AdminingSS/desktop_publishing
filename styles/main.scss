@@ -250,3 +250,25 @@ input:checked + .tm-sliderbox:before {
 .tm-font-global {
   color: $global-color;
 }
+
+//dz restyling
+.dropzone {
+  min-height: auto;
+  border: none;
+  background: transparent;
+  padding: 0;
+}
+
+.dropzone .dz-message {
+  display: none;
+}
+
+//dz end
+
+.tm_btn_dots {
+  font-size: 8px;
+  color: $primary-color;
+  i {
+    padding: 0 3px;
+  }
+}

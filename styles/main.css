@@ -200,4 +200,19 @@ input:checked + .tm-sliderbox:before {
 .tm-font-global {
   color: #000000; }
 
+.dropzone {
+  min-height: auto;
+  border: none;
+  background: transparent;
+  padding: 0; }
+
+.dropzone .dz-message {
+  display: none; }
+
+.tm_btn_dots {
+  font-size: 8px;
+  color: #d81cff; }
+  .tm_btn_dots i {
+    padding: 0 3px; }
+
 /*# sourceMappingURL=main.css.map */
