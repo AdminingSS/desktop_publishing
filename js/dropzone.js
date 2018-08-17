@@ -496,6 +496,9 @@ var Dropzone = function (_Emitter) {
             this.on("addedfile", function(file) {
                 files.push(file);
             });
+            $('#fileSelectButton').on('click',function(){
+
+            });
         },
 
 
