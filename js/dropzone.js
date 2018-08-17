@@ -493,12 +493,12 @@ var Dropzone = function (_Emitter) {
          * You can add event listeners here
          */
         init: function init() {
-            this.on("addedfile", function(file) {
-                files.push(file);
-            });
-            $('#fileSelectButton').on('click',function(){
-
-            });
+            // this.on("addedfile", function(file) {
+            //     files.push(file);
+            // });
+            // $('#fileSelectButton').on('click',function(){
+            //
+            // });
         },
 
 

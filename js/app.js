@@ -101,14 +101,14 @@ $(document).ready(function () {
         (function () {
 
             //const dropzone = new Dropzone('#fileUpload', {url: './mail/mauler.php'});
-            // Dropzone.options.dzForm = {
-            //     previewsContainer: '.dropzone-previews',
-            //     init: function() {
-            //         this.on("addedfile", function(file) {
-            //             files.push(file);
-            //         });
-            //     }
-            // };
+            Dropzone.options.dzForm = {
+                previewsContainer: '.dropzone-previews',
+                init: function() {
+                    this.on("addedfile", function(file) {
+                        files.push(file);
+                    });
+                }
+            };
             // dropzone.on('addedfile', function (file) {
             //     files.push(file);
             // });
@@ -151,6 +151,14 @@ $(document).ready(function () {
 
         })();
 
+        const $fileButton = $('#fileSelectButton');
+        const $dropzoneForm = $('#dz-Form');
+        $fileButton.on({
+            'click' : function(evt) {
+                $dropzoneForm.trigger('click',evt);
+            }
+        });
+
     })();
 
 
@@ -170,10 +178,10 @@ $(document).ready(function () {
             const ref = this;
             const anotherPopper = new Tooltip(ref, {
                 title: '<div>\n' +
-                '        <h2>\n' +
+                '        <h6>\n' +
                 '            Заголовок\n' +
-                '        </h2>\n' +
-                '        <p>баран жираф и так далее, consectetur adipisicing elit. Asperiores dicta hic ipsam minima mollitia non placeat quaerat similique to</p>\n' +
+                '        </h6>\n' +
+                '        <p class="uk-margin-small">баран жираф и так далее, consectetur adipisicing elit. Asperiores dicta hic ipsam minima mollitia non placeat quaerat similique to</p>\n' +
                 '    </div>',
                 html: true
             });

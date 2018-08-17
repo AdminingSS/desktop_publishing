@@ -13,6 +13,15 @@ h1 {
   font-weight: bold;
 }
 
+h6 {
+  font-family: $global-font-family;
+  font-size: $global-font-size;
+  color: $global-color;
+  font-weight: bold;
+  padding: 0;
+  margin: 0;
+}
+
 .tm-button {
   font-size: $global-font-size;
   font-weight: bold;
@@ -271,4 +280,20 @@ input:checked + .tm-sliderbox:before {
   i {
     padding: 0 3px;
   }
+}
+
+
+//tooltip
+
+.tooltip-inner {
+  background-color: $default-color;
+  width: 300px;
+  padding: 20px;
+  border-radius: 5px;
+  color: $global-color;
+}
+
+.tooltip-arrow {
+  border: 10px solid transparent;
+  border-top: red;
 }
