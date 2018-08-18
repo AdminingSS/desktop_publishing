@@ -16,6 +16,18 @@ if (isset($_POST['message'])) {
     $message = substr(htmlspecialchars(trim($_POST['message'])), 0, 100);
     $content .= '<b>Сообщение: </b>' . $message . '<br>';
 }
+if (isset($_POST['currency'])) {
+    $currency = substr(htmlspecialchars(trim($_POST['currency'])), 0, 100);
+    $content .= '<b>Валюта: </b>' . $currency . '<br>';
+}
+if (isset($_POST['markup'])) {
+    //$markup = substr(htmlspecialchars(trim($_POST['markup'])), 0, 100);
+    $content .= '<b>Сверстать.</b><br>';
+}
+if (isset($_POST['urgent'])) {
+    //$message = substr(htmlspecialchars(trim($_POST['message'])), 0, 100);
+    $content .= '<b>Срочно!</b><br>';
+}
 
 // подключаем файл класса для отправки почты
 
