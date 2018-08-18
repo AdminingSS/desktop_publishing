@@ -1,0 +1,11 @@
+.dz-progress,.dz-error-message,.dz-success-mark,.dz-error-mark {
+  display: none;
+}
+.dz-started {
+  display: flex;
+  align-items: center;
+  color: #000;
+}
+.dz-preview {
+  padding: 5px 10px;
+}

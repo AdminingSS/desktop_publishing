@@ -494,6 +494,17 @@
 .js__jtooltip-s_dark .jtooltip-arrow {
   border-color: #000000; }
 
+.dz-progress, .dz-error-message, .dz-success-mark, .dz-error-mark {
+  display: none; }
+
+.dz-started {
+  display: flex;
+  align-items: center;
+  color: #000; }
+
+.dz-preview {
+  padding: 5px 10px; }
+
 body {
   font-family: "PT Sans", sans-serif;
   font-size: 16px;
