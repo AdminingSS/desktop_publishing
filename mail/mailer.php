@@ -4,17 +4,29 @@
 
 //require 'PHPMailer.php';
 
-$msg ='';
+$msg = '';
 $content = '';
 $subject = 'Почта пришла!!!';                      // тема письма , вместо многоточия вставьте ваш домен
 
 if (isset($_POST['email'])) {
-    $mail = substr(htmlspecialchars(trim($_POST['email'])), 0, 100);
-    $content .= '<b>Почта: </b>' . $mail . '<br>';
+    $email = substr(htmlspecialchars(trim($_POST['email'])), 0, 100);
+    $content .= '<b>Почта: </b>' . $email . '<br>';
 }
 if (isset($_POST['message'])) {
     $message = substr(htmlspecialchars(trim($_POST['message'])), 0, 100);
     $content .= '<b>Сообщение: </b>' . $message . '<br>';
+}
+if (isset($_POST['currency'])) {
+    $currency = substr(htmlspecialchars(trim($_POST['currency'])), 0, 100);
+    $content .= '<b>Валюта: </b>' . $currency . '<br>';
+}
+if (isset($_POST['markup'])) {
+    //$markup = substr(htmlspecialchars(trim($_POST['markup'])), 0, 100);
+    $content .= '<b>Сверстать.</b><br>';
+}
+if (isset($_POST['urgent'])) {
+    //$message = substr(htmlspecialchars(trim($_POST['message'])), 0, 100);
+    $content .= '<b>Срочно!</b><br>';
 }
 
 // подключаем файл класса для отправки почты
@@ -50,15 +62,17 @@ if (array_key_exists('file', $_FILES)) {
     }
 
 }
-$content .= '<b>Сообщение ошибки: </b>' . $msg . '<br>';
-$content .= '<b>Имя файла: </b>' . $filename . '<br>';
+//$content .= '<b>Сообщение ошибки: </b>' . $msg . '<br>';
+//$content .= '<b>Имя файла: </b>' . $filename . '<br>';
 
 $mail->Body = $content;
 
 // отправляем наше письмо
 
-if ($mail->Send()) header('Location: ../');                 // в поле Location можно настроить переадресацию
-else {
+if ($mail->Send()) {
+    mail($email,'Ваши файлы отправлены', 'Ваши файлы отправлены на распознавание');
+    header('Location: ../');
+} else {
     die ('Mailer Error: ' . $mail->ErrorInfo);
 }
 ?>
