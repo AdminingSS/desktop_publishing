@@ -1,6 +1,7 @@
 $(document).ready(function () {
 
 
+    //form things
     (function () {
 
         const files = [];
@@ -147,24 +148,9 @@ $(document).ready(function () {
 
         $reference.jTooltip(options);
 
-        // $reference.each(function () {
-        //     const ref = this;
-        //     const anotherPopper = new Tooltip(ref, {
-        //         title: '<div>\n' +
-        //         '        <h6>\n' +
-        //         '            Заголовок\n' +
-        //         '        </h6>\n' +
-        //         '        <p class="uk-margin-small">баран жираф и так далее, consectetur adipisicing elit. Asperiores dicta hic ipsam minima mollitia non placeat quaerat similique to</p>\n' +
-        //         '    </div>',
-        //         html: true,
-        //         placement: top,
-        //         offset : '20px'
-        //     });
-        // });
-
     })();
 
-
+    //dotline tooltip
     (function () {
 
         const $trigger5 = $('.tm-tooltip-trigger-5');
@@ -228,27 +214,23 @@ $(document).ready(function () {
         });
 
     })();
+
+    //waves
+    (function () {
+        $('#feel-the-wave').wavify({
+            height: 80,
+            bones: 4,
+            amplitude: 60,
+            color: '#B289EF',
+            speed: .15
+        });
+
+        $('#feel-the-wave-two').wavify({
+            height: 60,
+            bones: 3,
+            amplitude: 40,
+            color: 'rgba(150, 97, 255, .8)',
+            speed: .25
+        });
+    })();
 });
-
-(function () {
-    $('#feel-the-wave').wavify({
-        height: 80,
-        bones: 4,
-        amplitude: 60,
-        color: '#B289EF',
-        speed: .15
-    });
-
-    $('#feel-the-wave-two').wavify({
-        height: 60,
-        bones: 3,
-        amplitude: 40,
-        color: 'rgba(150, 97, 255, .8)',
-        speed: .25
-    });
-})();
-
-
-//function(){
-//                     return $($(ref).attr('title'))[0];
-//                 }
