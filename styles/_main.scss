@@ -36,7 +36,7 @@ h6 {
   color: $global-color;
 }
 
-.tm-button-primary  {
+.tm-button-primary {
   width: 190px;
   height: 40px;
 
@@ -64,18 +64,19 @@ h6 {
   right: -20px;
 }
 
-
 /* The switch - the box around the slider */
 .tm-switch {
   position: relative;
   display: inline-block;
-  width: 30px;  //60px;
+  width: 30px; //60px;
   height: 15px; //34px;
   min-width: 30px;
 }
 
 /* Hide default HTML checkbox */
-.tm-switch input {display:none;}
+.tm-switch input {
+  display: none;
+}
 
 /* The slider */
 .tm-sliderbox {
@@ -204,6 +205,7 @@ input:checked + .tm-sliderbox:before {
     content: '\f077';
   }
 }
+
 //end of select2
 
 .tm-plus-position-one {
@@ -280,7 +282,6 @@ input:checked + .tm-sliderbox:before {
   }
 }
 
-
 //tooltip
 
 .jtooltip-inner {
@@ -302,12 +303,14 @@ input:checked + .tm-sliderbox:before {
   -webkit-transform-origin: center bottom;
   transform-origin: center bottom;
 }
+
 .jtooltip-b .jtooltip-arrow {
   -webkit-animation-name: bounce-up;
   animation-name: bounce-up;
   -webkit-transform-origin: center bottom;
   transform-origin: center top;
 }
+
 .jtooltip-r .jtooltip-arrow {
   display: none;
   -webkit-animation-name: bounce-left;
@@ -315,6 +318,7 @@ input:checked + .tm-sliderbox:before {
   -webkit-transform-origin: center bottom;
   transform-origin: center bottom;
 }
+
 .jtooltip-l .jtooltip-arrow {
   display: none;
   -webkit-animation-name: bounce-right;
@@ -347,6 +351,7 @@ input:checked + .tm-sliderbox:before {
 }
 
 .tm-dotline-tooltip-5 {
+  display: none;
   position: relative;
   max-width: 300px;
   color: $default-color;
@@ -517,15 +522,13 @@ input:checked + .tm-sliderbox:before {
   }
 }
 
-
-
 //wavify
 .wave {
   position: absolute;
-  left:0;
-  right:0;
-  top:0;
-  bottom:0;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
   z-index: 1;
 }
 
@@ -536,3 +539,204 @@ input:checked + .tm-sliderbox:before {
 .tm-z-100 {
   z-index: 100;
 }
+
+@media (max-width: 1199px) {
+  .tm-tooltip-container-5 {
+    bottom: -170px;
+  }
+
+  .tm-tooltip-container-4 {
+    left: 370px;
+  }
+
+  .tm-dotline-tooltip-4 {
+
+    &::after {
+      height: 100px;
+      bottom: -110px;
+    }
+
+    &::before {
+      bottom: -110px;
+    }
+  }
+
+  .tm-tooltip-container-3 {
+     left: 260px;
+   }
+
+  .tm-dotline-tooltip-3 {
+
+    &::after {
+      height: 270px;
+      bottom: -280px;
+    }
+
+    &::before {
+      bottom: -280px;
+    }
+  }
+
+  .tm-tooltip-container-2 {
+    left: 190px;
+  }
+
+  .tm-tooltip-container-1 {
+    left: 120px;
+  }
+}
+
+@media (max-width: 1139px) {
+  .tm-tooltip-container-5 {
+    top: 470px;
+  }
+}
+
+@media (max-width: 1100px) {
+  .tm-tooltip-container-5 {
+    top: 450px;
+  }
+
+  .tm-tooltip-container-4 {
+    left: 330px;
+  }
+
+  .tm-tooltip-container-3 {
+    left: 230px;
+  }
+
+  .tm-dotline-tooltip-3 {
+
+    &::after {
+      height: 250px;
+      bottom: -260px;
+    }
+
+    &::before {
+      bottom: -260px;
+    }
+  }
+
+  .tm-tooltip-container-2 {
+    left: 170px;
+  }
+
+  .tm-dotline-tooltip-2 {
+
+    &::after {
+      height: 210px;
+      bottom: -220px;
+    }
+
+    &::before {
+      bottom: -220px;
+    }
+  }
+
+  .tm-tooltip-container-1 {
+    left: 100px;
+  }
+
+  .tm-dotline-tooltip-1 {
+    &::after {
+      height: 130px;
+      bottom: -120px;
+    }
+
+    &::before {
+      bottom: -120px;
+    }
+  }
+}
+
+@media (max-width: 1059px) {
+  .tm-tooltip-container-5 {
+    top: 430px;
+  }
+}
+
+@media (max-width: 989px) {
+  .tm-tooltip-container-5 {
+    top: 410px;
+  }
+
+  .tm-tooltip-container-4 {
+    left: 300px;
+  }
+
+  .tm-tooltip-container-3 {
+    left: 200px;
+  }
+
+  .tm-dotline-tooltip-3 {
+
+    &::after {
+      height: 220px;
+      bottom: -230px;
+    }
+
+    &::before {
+      bottom: -230px;
+    }
+  }
+
+  .tm-tooltip-container-2 {
+    left: 160px;
+  }
+
+  .tm-dotline-tooltip-2 {
+
+    &::after {
+      height: 200px;
+      bottom: -210px;
+    }
+
+    &::before {
+      bottom: -210px;
+    }
+  }
+
+  .tm-tooltip-container-1 {
+    left: 90px;
+  }
+
+  .tm-dotline-tooltip-1 {
+    &::after {
+      height: 120px;
+      bottom: -110px;
+    }
+
+    &::before {
+      bottom: -110px;
+    }
+  }
+}
+
+@media (max-width: 959px) {
+  .tm-tooltip-container-5 {
+    display: none;
+  }
+
+  .tm-tooltip-container-4 {
+    display: none;
+  }
+
+  .tm-tooltip-container-3 {
+    display: none;
+  }
+
+  .tm-tooltip-container-2 {
+    display: none;
+  }
+
+  .tm-tooltip-container-1 {
+    display: none;
+  }
+}
+
+
+
+
+
+
+
