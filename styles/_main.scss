@@ -293,9 +293,19 @@ input:checked + .tm-sliderbox:before {
 }
 
 .tm-tooltip {
+  position: relative;
   padding: 5px 0;
   cursor: pointer;
   border-bottom: 1px dashed;
+  &::after {
+    display: block;
+    position: absolute;
+    content: '';
+    width: 100%;
+    border-bottom: 1px dashed #fff;
+    bottom: 0;
+    left: -3px;
+  }
 }
 
 .jtooltip-t .jtooltip-arrow {
@@ -812,10 +822,3 @@ input:checked + .tm-sliderbox:before {
     display: none;
   }
 }
-
-
-
-
-
-
-
