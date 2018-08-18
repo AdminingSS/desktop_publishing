@@ -3,10 +3,8 @@ $(document).ready(function () {
 
     //form things
     (function () {
-
-        const files = [];
         let dropzone = null;
-        let formDataArr = [];
+        let formDataArr = null;
 
         //Validator
         (function () {
@@ -104,7 +102,7 @@ $(document).ready(function () {
         (function () {
 
             dropzone = new Dropzone('#dz-form', {
-                url: '/mail/mailer.php',
+                url: './mail/mailer.php',
                 uploadMultiple: true,
                 autoProcessQueue: false,
             });
