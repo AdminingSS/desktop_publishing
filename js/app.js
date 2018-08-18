@@ -187,7 +187,7 @@ $(document).ready(function () {
                 $elem5.css('visibility','visible');
             },
             'mouseleave': function () {
-                $elem5.css('visibility', 'hidden')
+                $elem5.css('visibility', 'hidden');
             }
         });
 
