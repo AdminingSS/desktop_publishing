@@ -344,14 +344,26 @@ input:checked + .tm-sliderbox:before {
 }
 
 //tooltips mk 2
+.tm-tooltip-trigger {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  background-color: transparent;
+}
+
 .tm-tooltip-container-5 {
   position: absolute;
   bottom: -190px;
   right: 70px;
+
+  .tm-tooltip-trigger-5 {
+    top: -170px;
+    left: 290px;
+  }
 }
 
 .tm-dotline-tooltip-5 {
-  display: none;
+  visibility: hidden;
   position: relative;
   max-width: 300px;
   color: $default-color;
@@ -386,9 +398,15 @@ input:checked + .tm-sliderbox:before {
   position: absolute;
   top: -120px;
   left: 390px;
+
+  .tm-tooltip-trigger-4 {
+    bottom: -120px;
+    left: -20px;
+  }
 }
 
 .tm-dotline-tooltip-4 {
+  visibility: hidden;
   position: relative;
   max-width: 300px;
   color: $default-color;
@@ -398,9 +416,9 @@ input:checked + .tm-sliderbox:before {
     display: block;
     content: '';
     width: 0;
-    height: 140px;
-    bottom: -150px;
-    left: 20px;
+    height: 110px;
+    bottom: -120px;
+    left: 0;
     border-right: 2px solid #e7aaff;
   }
 
@@ -410,8 +428,8 @@ input:checked + .tm-sliderbox:before {
     content: '';
     width: 5px;
     height: 5px;
-    bottom: -150px;
-    left: 18px;
+    bottom: -120px;
+    left: -2px;
     background-color: #e7aaff;
     border-radius: 50%;
   }
@@ -420,10 +438,16 @@ input:checked + .tm-sliderbox:before {
 .tm-tooltip-container-3 {
   position: absolute;
   top: -120px;
-  left: 300px;
+  left: 225px;
+
+  .tm-tooltip-trigger-3 {
+    bottom: -300px;
+    left: 0;
+  }
 }
 
 .tm-dotline-tooltip-3 {
+  visibility: hidden;
   position: relative;
   max-width: 250px;
   color: $default-color;
@@ -455,10 +479,16 @@ input:checked + .tm-sliderbox:before {
 .tm-tooltip-container-2 {
   position: absolute;
   top: -120px;
-  left: 220px;
+  left: 160px;
+
+  .tm-tooltip-trigger-2 {
+    bottom: -240px;
+    left: 0;
+  }
 }
 
 .tm-dotline-tooltip-2 {
+  visibility: hidden;
   position: relative;
   max-width: 250px;
   color: $default-color;
@@ -490,10 +520,16 @@ input:checked + .tm-sliderbox:before {
 .tm-tooltip-container-1 {
   position: absolute;
   top: -120px;
-  left: 145px;
+  left: 80px;
+
+  .tm-tooltip-trigger-1 {
+    bottom: -130px;
+    left: 0;
+  }
 }
 
 .tm-dotline-tooltip-1 {
+  visibility: hidden;
   position: relative;
   max-width: 250px;
   color: $default-color;
@@ -562,7 +598,7 @@ input:checked + .tm-sliderbox:before {
   }
 
   .tm-tooltip-container-3 {
-     left: 260px;
+     left: 200px;
    }
 
   .tm-dotline-tooltip-3 {
@@ -578,17 +614,33 @@ input:checked + .tm-sliderbox:before {
   }
 
   .tm-tooltip-container-2 {
-    left: 190px;
+    left: 150px;
   }
 
   .tm-tooltip-container-1 {
-    left: 120px;
+    left: 80px;
   }
 }
 
 @media (max-width: 1139px) {
   .tm-tooltip-container-5 {
     top: 470px;
+  }
+
+  .tm-tooltip-container-4 {
+    left: 350px;
+  }
+
+  .tm-dotline-tooltip-4 {
+
+    &::after {
+      height: 90px;
+      bottom: -100px;
+    }
+
+    &::before {
+      bottom: -100px;
+    }
   }
 }
 
@@ -598,27 +650,53 @@ input:checked + .tm-sliderbox:before {
   }
 
   .tm-tooltip-container-4 {
-    left: 330px;
+    left: 300px;
+
+    .tm-tooltip-trigger-4 {
+      bottom: -80px;
+    }
+  }
+
+  .tm-dotline-tooltip-4 {
+
+    &::after {
+      height: 70px;
+      bottom: -80px;
+    }
+
+    &::before {
+      bottom: -80px;
+    }
   }
 
   .tm-tooltip-container-3 {
-    left: 230px;
+    left: 180px;
+
+    .tm-tooltip-trigger-3 {
+      bottom: -240px;
+      left: 0;
+    }
   }
 
   .tm-dotline-tooltip-3 {
 
     &::after {
-      height: 250px;
-      bottom: -260px;
+      height: 230px;
+      bottom: -240px;
     }
 
     &::before {
-      bottom: -260px;
+      bottom: -240px;
     }
   }
 
   .tm-tooltip-container-2 {
-    left: 170px;
+    left: 140px;
+
+    .tm-tooltip-trigger-2 {
+      bottom: -220px;
+      left: 0;
+    }
   }
 
   .tm-dotline-tooltip-2 {
@@ -634,7 +712,7 @@ input:checked + .tm-sliderbox:before {
   }
 
   .tm-tooltip-container-1 {
-    left: 100px;
+    left: 80px;
   }
 
   .tm-dotline-tooltip-1 {
@@ -665,23 +743,23 @@ input:checked + .tm-sliderbox:before {
   }
 
   .tm-tooltip-container-3 {
-    left: 200px;
+    left: 180px;
   }
 
   .tm-dotline-tooltip-3 {
 
     &::after {
-      height: 220px;
-      bottom: -230px;
+      height: 210px;
+      bottom: -220px;
     }
 
     &::before {
-      bottom: -230px;
+      bottom: -220px;
     }
   }
 
   .tm-tooltip-container-2 {
-    left: 160px;
+    left: 130px;
   }
 
   .tm-dotline-tooltip-2 {
@@ -697,17 +775,17 @@ input:checked + .tm-sliderbox:before {
   }
 
   .tm-tooltip-container-1 {
-    left: 90px;
+    left: 70px;
   }
 
   .tm-dotline-tooltip-1 {
     &::after {
-      height: 120px;
-      bottom: -110px;
+      height: 130px;
+      bottom: -120px;
     }
 
     &::before {
-      bottom: -110px;
+      bottom: -120px;
     }
   }
 }

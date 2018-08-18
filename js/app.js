@@ -1,7 +1,6 @@
 $(document).ready(function () {
 
 
-
     (function () {
 
         const files = [];
@@ -103,8 +102,8 @@ $(document).ready(function () {
 
             Dropzone.options.dzForm = {
                 previewsContainer: '.dropzone-previews',
-                init: function() {
-                    this.on("addedfile", function(file) {
+                init: function () {
+                    this.on("addedfile", function (file) {
                         files.push(file);
                     });
                 }
@@ -115,8 +114,8 @@ $(document).ready(function () {
         const $fileButton = $('#fileSelectButton');
         const $dropzoneForm = $('#dz-Form');
         $fileButton.on({
-            'click' : function(evt) {
-                $dropzoneForm.trigger('click',evt);
+            'click': function (evt) {
+                $dropzoneForm.trigger('click', evt);
             }
         });
 
@@ -165,9 +164,73 @@ $(document).ready(function () {
 
     })();
 
+
+    (function () {
+
+        const $trigger5 = $('.tm-tooltip-trigger-5');
+        const $elem5 = $('.tm-dotline-tooltip-5');
+
+        const $trigger4 = $('.tm-tooltip-trigger-4');
+        const $elem4 = $('.tm-dotline-tooltip-4');
+
+        const $trigger3 = $('.tm-tooltip-trigger-3');
+        const $elem3 = $('.tm-dotline-tooltip-3');
+
+        const $trigger2 = $('.tm-tooltip-trigger-2');
+        const $elem2 = $('.tm-dotline-tooltip-2');
+
+        const $trigger1 = $('.tm-tooltip-trigger-1');
+        const $elem1 = $('.tm-dotline-tooltip-1');
+
+        $trigger5.on({
+            'mouseenter': function () {
+                $elem5.css('visibility','visible');
+            },
+            'mouseleave': function () {
+                $elem5.css('visibility', 'hidden')
+            }
+        });
+
+        $trigger4.on({
+            'mouseenter': function () {
+                $elem4.css('visibility','visible');
+            },
+            'mouseleave': function () {
+                $elem4.css('visibility', 'hidden')
+            }
+        });
+
+        $trigger3.on({
+            'mouseenter': function () {
+                $elem3.css('visibility','visible');
+            },
+            'mouseleave': function () {
+                $elem3.css('visibility', 'hidden')
+            }
+        });
+
+        $trigger2.on({
+            'mouseenter': function () {
+                $elem2.css('visibility','visible');
+            },
+            'mouseleave': function () {
+                $elem2.css('visibility', 'hidden')
+            }
+        });
+
+        $trigger1.on({
+            'mouseenter': function () {
+                $elem1.css('visibility','visible');
+            },
+            'mouseleave': function () {
+                $elem1.css('visibility', 'hidden')
+            }
+        });
+
+    })();
 });
 
-(function(){
+(function () {
     $('#feel-the-wave').wavify({
         height: 80,
         bones: 4,
