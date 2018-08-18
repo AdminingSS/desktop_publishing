@@ -5,50 +5,53 @@ $(document).ready(function () {
     (function () {
 
         const files = [];
+        let dropzone = null;
+        let formDataArr = [];
 
         //Validator
         (function () {
             $.validator.setDefaults({
                 submitHandler: function (form) {
 
-                    const formData = $(form).serializeArray();
-                    formData.push({
-                        name: 'file',
-                        value: files
-                    });
+                    formDataArr = $(form).serializeArray();
+                    dropzone.processQueue();
+                    // formData.push({
+                    //     name: 'file',
+                    //     value: files
+                    // });
 
-                    $.ajax({
-                        type: form.method,
-                        url: form.action,
-                        data: $.param(formData),
-                        success: function (response) {
-                            // //console.log(response);
-                            //
-                            // if (response) {
-                            //     self.hidePending(form, self.showSuccess.bind(self, form));
-                            //
-                            //     if (resolve) {
-                            //         resolve.call(self, form, response);
-                            //     }
-                            // } else {
-                            //     self.hidePending(form, self.showError.bind(self, form));
-                            //
-                            //     if (reject) {
-                            //         reject.call(self, form, response);
-                            //     }
-                            // }
-                            //
-                            // self.resetForms(form);
-                        },
-                        error: function (response) {
-
-                            // //console.log(response);
-                            // //throw new Error(response.statusText);
-                            // self.hidePending(form, self.showError.bind(self, form));
-                            // self.resetForms(form);
-
-                        }
-                    });
+                    // $.ajax({
+                    //     type: form.method,
+                    //     url: form.action,
+                    //     data: $.param(formData),
+                    //     success: function (response) {
+                    //         // //console.log(response);
+                    //         //
+                    //         // if (response) {
+                    //         //     self.hidePending(form, self.showSuccess.bind(self, form));
+                    //         //
+                    //         //     if (resolve) {
+                    //         //         resolve.call(self, form, response);
+                    //         //     }
+                    //         // } else {
+                    //         //     self.hidePending(form, self.showError.bind(self, form));
+                    //         //
+                    //         //     if (reject) {
+                    //         //         reject.call(self, form, response);
+                    //         //     }
+                    //         // }
+                    //         //
+                    //         // self.resetForms(form);
+                    //     },
+                    //     error: function (response) {
+                    //
+                    //         // //console.log(response);
+                    //         // //throw new Error(response.statusText);
+                    //         // self.hidePending(form, self.showError.bind(self, form));
+                    //         // self.resetForms(form);
+                    //
+                    //     }
+                    // });
 
 
                     //$(form).ajaxSubmit();
@@ -100,20 +103,34 @@ $(document).ready(function () {
         //dz
         (function () {
 
+            dropzone = new Dropzone('#dz-form', {
+                url: '/mail/mailer.php',
+                uploadMultiple: true,
+                autoProcessQueue: false,
+            });
 
-            Dropzone.options.dzForm = {
-                previewsContainer: '.dropzone-previews',
-                init: function () {
-                    this.on("addedfile", function (file) {
-                        files.push(file);
-                    });
-                }
-            };
+            dropzone.on('sending', function (file, xhr, formData) {
+
+                // Will sendthe filesize along with the file as POST data.
+                formDataArr.forEach(function (field) {
+                    formData.append(field.name, field.value);
+                });
+            });
+
+
+            // Dropzone.options.dzForm = {
+            //     previewsContainer: '.dropzone-previews',
+            //     init: function () {
+            //         this.on("addedfile", function (file) {
+            //             files.push(file);
+            //         });
+            //     }
+            // };
 
         })();
 
         const $fileButton = $('#fileSelectButton');
-        const $dropzoneForm = $('#dz-Form');
+        const $dropzoneForm = $('#dz-form');
         $fileButton.on({
             'click': function (evt) {
                 $dropzoneForm.trigger('click', evt);
@@ -170,7 +187,7 @@ $(document).ready(function () {
 
         $trigger5.on({
             'mouseenter': function () {
-                $elem5.css('visibility','visible');
+                $elem5.css('visibility', 'visible');
             },
             'mouseleave': function () {
                 $elem5.css('visibility', 'hidden');
@@ -179,7 +196,7 @@ $(document).ready(function () {
 
         $trigger4.on({
             'mouseenter': function () {
-                $elem4.css('visibility','visible');
+                $elem4.css('visibility', 'visible');
             },
             'mouseleave': function () {
                 $elem4.css('visibility', 'hidden')
@@ -188,7 +205,7 @@ $(document).ready(function () {
 
         $trigger3.on({
             'mouseenter': function () {
-                $elem3.css('visibility','visible');
+                $elem3.css('visibility', 'visible');
             },
             'mouseleave': function () {
                 $elem3.css('visibility', 'hidden')
@@ -197,7 +214,7 @@ $(document).ready(function () {
 
         $trigger2.on({
             'mouseenter': function () {
-                $elem2.css('visibility','visible');
+                $elem2.css('visibility', 'visible');
             },
             'mouseleave': function () {
                 $elem2.css('visibility', 'hidden')
@@ -206,7 +223,7 @@ $(document).ready(function () {
 
         $trigger1.on({
             'mouseenter': function () {
-                $elem1.css('visibility','visible');
+                $elem1.css('visibility', 'visible');
             },
             'mouseleave': function () {
                 $elem1.css('visibility', 'hidden')
