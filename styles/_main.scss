@@ -295,6 +295,7 @@ input:checked + .tm-sliderbox:before {
 .tm-tooltip {
   padding: 5px 0;
   cursor: pointer;
+  border-bottom: 1px dashed;
 }
 
 .jtooltip-t .jtooltip-arrow {
