@@ -100,7 +100,7 @@ $(document).ready(function () {
         //dz
         (function () {
 
-            //const dropzone = new Dropzone('#fileUpload', {url: './mail/mauler.php'});
+
             Dropzone.options.dzForm = {
                 previewsContainer: '.dropzone-previews',
                 init: function() {
@@ -109,45 +109,6 @@ $(document).ready(function () {
                     });
                 }
             };
-            // dropzone.on('addedfile', function (file) {
-            //     files.push(file);
-            // });
-
-            // const $fileUpload = $("#fileUpload");
-            //
-            // // $fileUpload.dropzone({
-            // //     url: "./mail/mailer.php",
-            // //     parallelUploads: 5,
-            // //     uploadMultiple: true,
-            // //     autoProcessQueue: false,
-            // //     addRemoveLinks: true,
-            // //     previewsContainer: ".dropzone-previews",
-            // //     forceFallback: false
-            // //
-            // //     // init: function() {
-            // //     //     dzClosure = this; // Makes sure that 'this' is understood inside the functions below.
-            // //     //
-            // //     //     // for Dropzone to process the queue (instead of default form behavior):
-            // //     //     $(".filesend-submit").click(function (e) {
-            // //     //
-            // //     //         // Make sure that the form isn't actually being sent.
-            // //     //         e.preventDefault();
-            // //     //         e.stopPropagation();
-            // //     //         dzClosure.processQueue();
-            // //     //     });
-            // //     //
-            // //     //     //send all the form data along with the files:
-            // //     //     this.on("sendingmultiple", function(data, xhr, formData) {
-            // //     //         formData.append("email", $(".filesend-email").val());
-            // //     //         formData.append("message", $(".filesend-message").val());
-            // //     //     });
-            // //     // }
-            // //
-            // // });
-            //
-            // $fileUpload.on('addedfile',function (file) {
-            //     console.dir(arguments);
-            // });
 
         })();
 
