@@ -1,8 +1,12 @@
 <?php
 
-$subject = 'Почта пришла!!!';                      // тема письма , вместо многоточия вставьте ваш домен
-$content = '';
+//use PHPMailer\PHPMailer\PHPMailer;
 
+//require 'PHPMailer.php';
+
+$msg ='';
+$content = '';
+$subject = 'Почта пришла!!!';                      // тема письма , вместо многоточия вставьте ваш домен
 
 if (isset($_POST['email'])) {
     $mail = substr(htmlspecialchars(trim($_POST['email'])), 0, 100);
@@ -13,110 +17,48 @@ if (isset($_POST['message'])) {
     $content .= '<b>Сообщение: </b>' . $message . '<br>';
 }
 
-$file = "";
+// подключаем файл класса для отправки почты
 
-// Если поле выбора вложения не пустое - закачиваем его на сервер
+require 'class.phpmailer.php';
+$mail = new PHPMailer();
+$mail->AddAddress('admining@mail.ru');        // кому - адрес, Имя (например, 'email@ rek9.ru','Денис Герасимов')
+$mail->IsHTML(true);                                        // выставляем формат письма HTML
+$mail->CharSet = "UTF-8";                                // кодировка
+$mail->From = "info@chistu.ru";                                // email, с которого отправиться письмо
+$mail->FromName = "DP";                        // откого письмо
 
-$picture = "";
+$mail->Subject = $subject;
 
-// Если поле выбора вложения не пустое - закачиваем его на сервер
+if (array_key_exists('file', $_FILES)) {
 
-if(isset($_FILES)) {
-    $qmsg = '12345';
-}
+    for ($ct = 0; $ct < count($_FILES['file']['tmp_name']); $ct++) {
 
-if (!empty($_FILES['file']['tmp_name']))
+        $uploadfile = tempnam(sys_get_temp_dir(), hash('sha256', $_FILES['file']['name'][$ct]));
 
-{
+        $filename = $_FILES['file']['name'][$ct];
 
-    // Закачиваем файл
+        if (move_uploaded_file($_FILES['file']['tmp_name'][$ct], $uploadfile)) {
 
-    $path = $_FILES['file']['name'];
+            $mail->AddAttachment($uploadfile, $filename);
 
-    if (move_uploaded_file($_FILES['file']['tmp_name'], $path)) $picture = $path;
+        } else {
 
-}
+            $msg .= 'Failed to move file to ' . $uploadfile;
 
-$thm = $subject;
-
-$msg = $content . $qmsg;
-
-$mail_to = 'admining@mail.ru';
-
-// Отправляем почтовое сообщение
-
-if(empty($picture)) mail($mail_to, $thm, $msg);
-
-else send_mail($mail_to, $thm, $msg, $picture);
-
-// Вспомогательная функция для отправки почтового сообщения с вложением
-
-function send_mail($to, $thm, $html, $path)
-
-{
-    $multipart = '';
-    $headers = '';
-
-    $fp = fopen($path,"r");
-
-    if (!$fp)
-
-    {
-
-        print "Файл $path не может быть прочитан";
-
-        exit();
-
-    }
-
-    $file = fread($fp, filesize($path));
-
-    fclose($fp);
-
-
-
-    $boundary = "--".md5(uniqid(time())); // генерируем разделитель
-
-    $headers .= "MIME-Version: 1.0\n";
-
-    $headers .="Content-Type: multipart/mixed; boundary=\"$boundary\"\n";
-
-    $multipart .= "--$boundary\n";
-
-    $kod = 'koi8-r'; // или $kod = 'windows-1251';
-
-    $multipart .= "Content-Type: text/html; charset=$kod\n";
-
-    $multipart .= "Content-Transfer-Encoding: Quot-Printed\n\n";
-
-    $multipart .= "$html\n\n";
-
-
-
-    $message_part = "--$boundary\n";
-
-    $message_part .= "Content-Type: application/octet-stream\n";
-
-    $message_part .= "Content-Transfer-Encoding: base64\n";
-
-    $message_part .= "Content-Disposition: attachment; filename = \"".$path."\"\n\n";
-
-    $message_part .= chunk_split(base64_encode($file))."\n";
-
-    $multipart .= $message_part."--$boundary--\n";
-
-
-
-    if(!mail($to, $thm, $multipart, $headers))
-
-    {
-
-        echo "К сожалению, письмо не отправлено";
-
-        exit();
+        }
 
     }
 
 }
+$content .= '<b>Сообщение ошибки: </b>' . $msg . '<br>';
+$content .= '<b>Имя файла: </b>' . $filename . '<br>';
 
+$mail->Body = $content;
+
+// отправляем наше письмо
+
+if ($mail->Send()) header('Location: ../');                 // в поле Location можно настроить переадресацию
+else {
+    die ('Mailer Error: ' . $mail->ErrorInfo);
+}
 ?>

@@ -1,8 +1,8 @@
 <?php
 
-use PHPMailer\PHPMailer\PHPMailer;
+//use PHPMailer\PHPMailer\PHPMailer;
 
-require 'PHPMailer.php';
+//require 'PHPMailer.php';
 
 $msg ='';
 $content = '';
@@ -19,7 +19,7 @@ if (isset($_POST['message'])) {
 
 // подключаем файл класса для отправки почты
 
-//require 'class.phpmailer.php';
+require 'class.phpmailer.php';
 $mail = new PHPMailer();
 $mail->AddAddress('admining@mail.ru');        // кому - адрес, Имя (например, 'email@ rek9.ru','Денис Герасимов')
 $mail->IsHTML(true);                                        // выставляем формат письма HTML
