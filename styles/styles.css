@@ -944,7 +944,7 @@ input:checked + .tm-sliderbox:before {
     display: block;
     content: '';
     width: 0;
-    height: 140px;
+    height: 130px;
     bottom: -130px;
     left: 20px;
     border-right: 2px solid #e7aaff; }
@@ -1055,7 +1055,7 @@ input:checked + .tm-sliderbox:before {
     left: 80px; }
 
   .tm-dotline-tooltip-1::after {
-    height: 130px;
+    height: 120px;
     bottom: -120px; }
   .tm-dotline-tooltip-1::before {
     bottom: -120px; } }
@@ -1091,7 +1091,7 @@ input:checked + .tm-sliderbox:before {
     left: 70px; }
 
   .tm-dotline-tooltip-1::after {
-    height: 130px;
+    height: 120px;
     bottom: -120px; }
   .tm-dotline-tooltip-1::before {
     bottom: -120px; } }
