@@ -13,7 +13,6 @@ $(document).ready(function () {
                 submitHandler: function (form) {
                     formDataArr = $(form).serializeArray();
                     dropzone.processQueue();
-                    UIkit.modal($('#sendModal')).hide();
                 }
             });
 
@@ -77,6 +76,7 @@ $(document).ready(function () {
 
             const $sendForm = $('#sendForm');
             const $filesCnt = $('#sendForm #filesCnt');
+            const $successModal = $('#successModal');
 
             dropzone.on('addedfile', function() {
                 fileCnt++;
@@ -102,6 +102,13 @@ $(document).ready(function () {
                     formData.append(field.name, field.value);
                 });
             });
+
+            dropzone.on('successmultiple', function(){
+                dropzone.removeAllFiles(true);
+                UIkit.modal($('#sendModal')).hide();
+                UIkit.modal($successModal).show();
+            });
+
         })();
 
         // delegate click
