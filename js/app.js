@@ -75,20 +75,24 @@ $(document).ready(function () {
                 addRemoveLinks: true,
             });
 
+            const $sendForm = $('#sendForm');
+            const $filesCnt = $('#sendForm #filesCnt');
+
             dropzone.on('addedfile', function() {
                 fileCnt++;
 
-                const $filesCnt = $('#sendForm #filesCnt');
-
                 $filesCnt.val(fileCnt);
+
+                $sendForm.valid();
             });
 
             dropzone.on('removedfile', function() {
                 fileCnt--;
-
-                const $filesCnt = $('#sendForm #filesCnt');
+                if (fileCnt <= 0)  fileCnt = null;
 
                 $filesCnt.val(fileCnt);
+
+                $sendForm.valid();
             });
 
             dropzone.on('sending', function (file, xhr, formData) {
@@ -111,10 +115,7 @@ $(document).ready(function () {
             });
         })();
 
-
-
     })();
-
 
     //select2
     (function () {

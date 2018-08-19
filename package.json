@@ -2,6 +2,7 @@
   "dependencies": {
     "popper.js": "^1.14.4",
     "tooltip.js": "^1.2.0",
-    "uikit": "^3.0.0-rc.11"
+    "uikit": "^3.0.0-rc.11",
+    "yui-compressor": "^0.1.3"
   }
 }
