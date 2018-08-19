@@ -286,6 +286,9 @@ input:checked + .tm-sliderbox:before {
   cursor: pointer;
 }
 
+.tm-hidden {
+  display: none;
+}
 //tooltip
 
 .jtooltip-inner {

@@ -1,25 +1,33 @@
-.dz-progress,.dz-error-message,.dz-success-mark,.dz-error-mark,.dz-details {
+.dz-progress, .dz-error-message, .dz-success-mark, .dz-error-mark, .dz-details {
   display: none;
 }
+
 .dz-started {
   display: flex;
   align-items: center;
   color: #000;
 }
+
 .dz-preview {
   padding: 5px 10px;
 }
+
 .dz-image img {
   height: 60px;
 }
+
 .dz-file-preview {
-  position: relative;
-  height: 60px;
-  width: 60px;
-  background: url("../images/file.jpg") center no-repeat;
-  -webkit-background-size: cover;
-  background-size: contain;
+  //height: 80px;
+
+  .dz-image {
+    height: 60px;
+    width: 60px;
+    background: url("../images/file.jpg") center no-repeat;
+    -webkit-background-size: cover;
+    background-size: contain;
+  }
 }
+
 .dz-remove {
-  white-space: nowrap;
+  font-size: 10px;
 }

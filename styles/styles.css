@@ -508,8 +508,7 @@
 .dz-image img {
   height: 60px; }
 
-.dz-file-preview {
-  position: relative;
+.dz-file-preview .dz-image {
   height: 60px;
   width: 60px;
   background: url("../images/file.jpg") center no-repeat;
@@ -517,7 +516,7 @@
   background-size: contain; }
 
 .dz-remove {
-  white-space: nowrap; }
+  font-size: 10px; }
 
 body {
   font-family: "PT Sans", sans-serif;
@@ -745,6 +744,9 @@ input:checked + .tm-sliderbox:before {
 
 .tm-pointer {
   cursor: pointer; }
+
+.tm-hidden {
+  display: none; }
 
 .jtooltip-inner {
   background-color: #ffffff;
