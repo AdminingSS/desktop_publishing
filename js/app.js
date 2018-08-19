@@ -5,7 +5,7 @@ $(document).ready(function () {
     (function () {
         let dropzone = null;
         let formDataArr = null;
-        let fileCnt = 0;
+        let fileCnt = null;
 
         //Validator
         (function () {
@@ -19,8 +19,11 @@ $(document).ready(function () {
             const $sendForm = $('#sendForm');
 
             const options = {
+                ignore : [],
                 rules: {
-                    file: "required",
+                    filescnt: {
+                        required: true
+                    },
                     email: {
                         required: true,
                         email: true
@@ -30,7 +33,10 @@ $(document).ready(function () {
                     }
                 },
                 messages: {
-                    file: "Пожалуйста, загрузите файл(ы)",
+                    filescnt:
+                        {
+                            required: "Пожалуйста, загрузите файл(ы)"
+                        },
                     email: {
                         required: "Пожалуйста, введите свой почтовый адрес",
                         email: "Пожалуйста, введите корректный почтовый адрес"
@@ -71,10 +77,18 @@ $(document).ready(function () {
 
             dropzone.on('addedfile', function() {
                 fileCnt++;
+
+                const $filesCnt = $('#sendForm #filesCnt');
+
+                $filesCnt.val(fileCnt);
             });
 
-            dropzone.on('removefile', function() {
+            dropzone.on('removedfile', function() {
                 fileCnt--;
+
+                const $filesCnt = $('#sendForm #filesCnt');
+
+                $filesCnt.val(fileCnt);
             });
 
             dropzone.on('sending', function (file, xhr, formData) {
@@ -96,6 +110,8 @@ $(document).ready(function () {
                 }
             });
         })();
+
+
 
     })();
 
