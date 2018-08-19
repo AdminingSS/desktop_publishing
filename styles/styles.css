@@ -505,6 +505,9 @@
 .dz-preview {
   padding: 5px 10px; }
 
+.dz-image img {
+  height: 60px; }
+
 body {
   font-family: "PT Sans", sans-serif;
   font-size: 16px;

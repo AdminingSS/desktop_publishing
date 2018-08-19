@@ -13,46 +13,6 @@ $(document).ready(function () {
 
                     formDataArr = $(form).serializeArray();
                     dropzone.processQueue();
-                    // formData.push({
-                    //     name: 'file',
-                    //     value: files
-                    // });
-
-                    // $.ajax({
-                    //     type: form.method,
-                    //     url: form.action,
-                    //     data: $.param(formData),
-                    //     success: function (response) {
-                    //         // //console.log(response);
-                    //         //
-                    //         // if (response) {
-                    //         //     self.hidePending(form, self.showSuccess.bind(self, form));
-                    //         //
-                    //         //     if (resolve) {
-                    //         //         resolve.call(self, form, response);
-                    //         //     }
-                    //         // } else {
-                    //         //     self.hidePending(form, self.showError.bind(self, form));
-                    //         //
-                    //         //     if (reject) {
-                    //         //         reject.call(self, form, response);
-                    //         //     }
-                    //         // }
-                    //         //
-                    //         // self.resetForms(form);
-                    //     },
-                    //     error: function (response) {
-                    //
-                    //         // //console.log(response);
-                    //         // //throw new Error(response.statusText);
-                    //         // self.hidePending(form, self.showError.bind(self, form));
-                    //         // self.resetForms(form);
-                    //
-                    //     }
-                    // });
-
-
-                    //$(form).ajaxSubmit();
                 }
             });
 
@@ -114,16 +74,6 @@ $(document).ready(function () {
                     formData.append(field.name, field.value);
                 });
             });
-
-
-            // Dropzone.options.dzForm = {
-            //     previewsContainer: '.dropzone-previews',
-            //     init: function () {
-            //         this.on("addedfile", function (file) {
-            //             files.push(file);
-            //         });
-            //     }
-            // };
 
         })();
 
