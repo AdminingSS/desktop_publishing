@@ -508,6 +508,14 @@
 .dz-image img {
   height: 60px; }
 
+.dz-file-preview {
+  position: relative;
+  height: 60px;
+  width: 60px;
+  background: url("../images/file.jpg") center no-repeat;
+  -webkit-background-size: cover;
+  background-size: contain; }
+
 body {
   font-family: "PT Sans", sans-serif;
   font-size: 16px;
