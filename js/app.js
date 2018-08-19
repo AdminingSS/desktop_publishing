@@ -72,7 +72,6 @@ $(document).ready(function () {
                 uploadMultiple: true,
                 autoProcessQueue: false,
                 parallelUploads: 5,
-                previewTemplate: document.querySelector('#tpl').innerHTML,
                 addRemoveLinks: true,
             });
 
