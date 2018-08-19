@@ -74,7 +74,7 @@ $(document).ready(function () {
             });
 
             dropzone.on('removefile', function() {
-                fileCnt-;
+                fileCnt--;
             });
 
             dropzone.on('sending', function (file, xhr, formData) {
