@@ -65,11 +65,11 @@ $(document).ready(function () {
                 uploadMultiple: true,
                 autoProcessQueue: false,
                 parallelUploads: 5,
-                //addRemoveLinks: true
+                previewTemplate: document.querySelector('#tpl').innerHTML,
             });
 
             dropzone.on('addedfile', function() {
-                fileCnt = 1;
+                fileCnt++;
             });
 
             dropzone.on('sending', function (file, xhr, formData) {
