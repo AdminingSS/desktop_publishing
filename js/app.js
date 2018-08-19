@@ -5,6 +5,7 @@ $(document).ready(function () {
     (function () {
         let dropzone = null;
         let formDataArr = null;
+        let fileCnt = 0;
 
         //Validator
         (function () {
@@ -64,6 +65,11 @@ $(document).ready(function () {
                 uploadMultiple: true,
                 autoProcessQueue: false,
                 parallelUploads: 5,
+                //addRemoveLinks: true
+            });
+
+            dropzone.on('addedfile', function() {
+                fileCnt = 1;
             });
 
             dropzone.on('sending', function (file, xhr, formData) {

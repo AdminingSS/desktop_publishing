@@ -282,6 +282,10 @@ input:checked + .tm-sliderbox:before {
   }
 }
 
+.tm-pointer {
+  cursor: pointer;
+}
+
 //tooltip
 
 .jtooltip-inner {

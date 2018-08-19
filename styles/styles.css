@@ -516,6 +516,9 @@
   -webkit-background-size: cover;
   background-size: contain; }
 
+.dz-remove {
+  white-space: nowrap; }
+
 body {
   font-family: "PT Sans", sans-serif;
   font-size: 16px;
@@ -739,6 +742,9 @@ input:checked + .tm-sliderbox:before {
   color: #d81cff; }
   .tm_btn_dots i {
     padding: 0 3px; }
+
+.tm-pointer {
+  cursor: pointer; }
 
 .jtooltip-inner {
   background-color: #ffffff;
