@@ -10,7 +10,6 @@ $(document).ready(function () {
         (function () {
             $.validator.setDefaults({
                 submitHandler: function (form) {
-
                     formDataArr = $(form).serializeArray();
                     dropzone.processQueue();
                 }
@@ -60,11 +59,11 @@ $(document).ready(function () {
 
         //dz
         (function () {
-
             dropzone = new Dropzone('#dz-form', {
                 url: './mail/mailer.php',
                 uploadMultiple: true,
                 autoProcessQueue: false,
+                parallelUploads: 5,
             });
 
             dropzone.on('sending', function (file, xhr, formData) {
@@ -74,16 +73,18 @@ $(document).ready(function () {
                     formData.append(field.name, field.value);
                 });
             });
-
         })();
 
-        const $fileButton = $('#fileSelectButton');
-        const $dropzoneForm = $('#dz-form');
-        $fileButton.on({
-            'click': function (evt) {
-                $dropzoneForm.trigger('click', evt);
-            }
-        });
+        // delegate click
+        (function () {
+            const $fileButton = $('#fileSelectButton');
+            const $dropzoneForm = $('#dz-form');
+            $fileButton.on({
+                'click': function (evt) {
+                    $dropzoneForm.trigger('click', evt);
+                }
+            });
+        })();
 
     })();
 
