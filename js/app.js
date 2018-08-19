@@ -109,6 +109,10 @@ $(document).ready(function () {
                 UIkit.modal($successModal).show();
             });
 
+            dropzone.on('error', function(){
+                UIkit.modal($('#errorModal')).show();
+            });
+
         })();
 
         // delegate click

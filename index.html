@@ -244,6 +244,20 @@
     </div>
 </div>
 
+<div id="errorModal" class="uk-flex-top uk-width-auto" uk-modal>
+    <div class="tm-background-modal uk-modal-dialog uk-modal-body uk-border-rounded uk-margin-auto-vertical uk-text-center">
+        <button class="tm-modal-close uk-modal-close-outside" type="button" uk-close>
+            <i class="fas fa-times"></i>
+        </button>
+        <div class="uk-margin uk-width-1-1 uk-text-center">
+            <h2>Произошла ошибка. Ваши файлы отправлены не были.</h2>
+            <button type="submit" onclick="UIkit.modal($('#errorModal')).hide();" class="tm-button tm-button-primary uk-button uk-border-rounded">
+                Закрыть
+            </button>
+        </div>
+    </div>
+</div>
+
 <script
         src="https://code.jquery.com/jquery-3.3.1.min.js"
         integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
