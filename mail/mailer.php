@@ -1,12 +1,8 @@
 <?php
 
-//use PHPMailer\PHPMailer\PHPMailer;
-
-//require 'PHPMailer.php';
-
 $msg = '';
 $content = '';
-$subject = 'Почта пришла!!!';                      // тема письма , вместо многоточия вставьте ваш домен
+$subject = 'Файлы на распознавание';                 // тема письма
 
 if (isset($_POST['email'])) {
     $email = substr(htmlspecialchars(trim($_POST['email'])), 0, 100);
@@ -30,14 +26,14 @@ if (isset($_POST['urgent'])) {
 }
 
 // подключаем файл класса для отправки почты
-
 require 'class.phpmailer.php';
+
 $mail = new PHPMailer();
-$mail->AddAddress('admining@mail.ru');        // кому - адрес, Имя (например, 'email@ rek9.ru','Денис Герасимов')
-$mail->IsHTML(true);                                        // выставляем формат письма HTML
-$mail->CharSet = "UTF-8";                                // кодировка
-$mail->From = "info@chistu.ru";                                // email, с которого отправиться письмо
-$mail->FromName = "DP";                        // откого письмо
+$mail->AddAddress('admining@mail.ru');        // кому - адрес
+$mail->IsHTML(true);                            // выставляем формат письма HTML
+$mail->CharSet = "UTF-8";                             // кодировка
+$mail->From = "info@DP.ru";                           // email, с которого отправиться письмо
+$mail->FromName = "DP";                               // откого письмо
 
 $mail->Subject = $subject;
 
@@ -62,17 +58,16 @@ if (array_key_exists('file', $_FILES)) {
     }
 
 }
-//$content .= '<b>Сообщение ошибки: </b>' . $msg . '<br>';
-//$content .= '<b>Имя файла: </b>' . $filename . '<br>';
 
 $mail->Body = $content;
 
-// отправляем наше письмо
+// отправляем письмо
 
 if ($mail->Send()) {
     mail($email,'Ваши файлы отправлены', 'Ваши файлы отправлены на распознавание');
     header('Location: ../');
 } else {
+    mail('admining@mail.ru','Отправить файлы на отправку не вышло.', 'По каким-то причинам клиент '. $email . ' не смог отправить вам файлы');
     die ('Mailer Error: ' . $mail->ErrorInfo);
 }
 ?>

@@ -13,6 +13,7 @@ $(document).ready(function () {
                 submitHandler: function (form) {
                     formDataArr = $(form).serializeArray();
                     dropzone.processQueue();
+                    UIkit.modal($('#sendModal')).hide();
                 }
             });
 
