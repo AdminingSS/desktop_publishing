@@ -494,7 +494,7 @@
 .js__jtooltip-s_dark .jtooltip-arrow {
   border-color: #000000; }
 
-.dz-progress, .dz-error-message, .dz-success-mark, .dz-error-mark {
+.dz-progress, .dz-error-message, .dz-success-mark, .dz-error-mark, .dz-details {
   display: none; }
 
 .dz-started {
