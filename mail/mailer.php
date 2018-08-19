@@ -29,7 +29,7 @@ if (isset($_POST['urgent'])) {
 require 'class.phpmailer.php';
 
 $mail = new PHPMailer();
-$mail->AddAddress('admining@mail.ru');        // кому - адрес
+$mail->AddAddress('timofeevpv@mail.ru');        // кому - адрес
 $mail->IsHTML(true);                            // выставляем формат письма HTML
 $mail->CharSet = "UTF-8";                             // кодировка
 $mail->From = "info@DP.ru";                           // email, с которого отправиться письмо
@@ -67,7 +67,7 @@ if ($mail->Send()) {
     mail($email,'Ваши файлы отправлены', 'Ваши файлы отправлены на распознавание');
     header('Location: ../');
 } else {
-    mail('admining@mail.ru','Отправить файлы на отправку не вышло.', 'По каким-то причинам клиент '. $email . ' не смог отправить вам файлы');
+    mail('timofeevpv@mail.ru','Отправить файлы на отправку не вышло.', 'По каким-то причинам клиент '. $email . ' не смог отправить вам файлы');
     die ('Mailer Error: ' . $mail->ErrorInfo);
 }
 ?>
