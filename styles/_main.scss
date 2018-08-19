@@ -404,7 +404,7 @@ input:checked + .tm-sliderbox:before {
     left: 290px;
     border-bottom: 2px solid #e7aaff;
     border-right: 2px solid #e7aaff;
-    border-radius: 5px;
+    border-radius: 5px 0;
   }
 
   &::before {
