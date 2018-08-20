@@ -70,6 +70,16 @@ $(document).ready(function () {
                 autoProcessQueue: false,
                 parallelUploads: 5,
                 addRemoveLinks: true,
+                previewTemplate: '<div id="tpl">\n' +
+                '        <div class="dz-preview dz-file-preview">\n' +
+                '            <div class="dz-image uk-position-relative">\n' +
+                '                <img data-dz-thumbnail />\n' +
+                '                <div class="uk-position-absolute">\n' +
+                '                    <div class="lds-ring"><div></div><div></div><div></div><div></div></div>\n' +
+                '                </div>\n' +
+                '            </div>\n' +
+                '        </div>\n' +
+                '    </div>',
             });
 
             const $sendForm = $('#sendForm');

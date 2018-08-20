@@ -25,6 +25,15 @@
     background: url("../images/file.jpg") center no-repeat;
     -webkit-background-size: cover;
     background-size: contain;
+
+    >div {
+      height: 60px;
+      width: 60px;
+      top: 0;
+      left: 0;
+      background: rgba(0,0,0,0.5);
+
+    }
   }
 }
 
