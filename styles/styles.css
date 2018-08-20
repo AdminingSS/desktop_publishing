@@ -513,7 +513,8 @@
   width: 60px;
   background: url("../images/file.jpg") center no-repeat;
   -webkit-background-size: cover;
-  background-size: contain; }
+  background-size: contain;
+  cursor: pointer; }
   .dz-file-preview .dz-image > div {
     height: 60px;
     width: 60px;
@@ -1110,5 +1111,12 @@ input:checked + .tm-sliderbox:before {
     transform: rotate(0deg); }
   100% {
     transform: rotate(360deg); } }
+.plus-btn {
+  width: 60px;
+  height: 60px;
+  background-color: #fff;
+  color: #d81cff;
+  line-height: 60px;
+  cursor: pointer; }
 
 /*# sourceMappingURL=styles.css.map */

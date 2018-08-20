@@ -69,10 +69,10 @@ $(document).ready(function () {
                 uploadMultiple: true,
                 autoProcessQueue: false,
                 parallelUploads: 5,
-                addRemoveLinks: true,
+                //addRemoveLinks: true,
                 previewTemplate: '<div id="tpl">\n' +
                 '        <div class="dz-preview dz-file-preview">\n' +
-                '            <div class="dz-image uk-position-relative">\n' +
+                '            <div class="dz-image uk-position-relative" data-dz-remove>\n' +
                 '                <img data-dz-thumbnail />\n' +
                 '                <div class="uk-position-absolute">\n' +
                 '                    <div class="lds-ring"><div></div><div></div><div></div><div></div></div>\n' +
@@ -82,11 +82,23 @@ $(document).ready(function () {
                 '    </div>',
             });
 
+            const $dzForma = $('#dz-form');
             const $sendForm = $('#sendForm');
             const $filesCnt = $('#sendForm #filesCnt');
             const $successModal = $('#successModal');
+            const $plusBtn = $('.plus-btn');
+
+            $plusBtn.on({
+                'click': function (evt) {
+                    $dzForma.trigger('click', evt);
+                }
+            });
 
             dropzone.on('addedfile', function() {
+
+                $dzForma.append($plusBtn);
+                $plusBtn.show();
+
                 fileCnt++;
 
                 $filesCnt.val(fileCnt);
@@ -98,7 +110,10 @@ $(document).ready(function () {
 
             dropzone.on('removedfile', function() {
                 fileCnt--;
-                if (fileCnt <= 0)  fileCnt = null;
+                if (fileCnt <= 0)  {
+                    fileCnt = null;
+                    $plusBtn.hide();
+                }
 
                 $filesCnt.val(fileCnt);
 
