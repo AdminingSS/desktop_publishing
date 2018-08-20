@@ -1,6 +1,4 @@
 $(document).ready(function () {
-
-
     //form things
     (function () {
         let dropzone = null;
