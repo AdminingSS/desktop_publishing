@@ -406,7 +406,8 @@ input:checked + .tm-sliderbox:before {
   position: absolute;
   width: 50px;
   height: 50px;
-  background-color: transparent;
+  //background-color: transparent;
+  background-color: green;
   display: block;
 
   .tm-dotline-tooltip {
@@ -480,27 +481,27 @@ input:checked + .tm-sliderbox:before {
 }
 
 .tm-tooltip-trigger-2 {
-  top: 0px;
-  left: 21px;
+  top: 160px;
+  left: 100px;
   width: 151px;
 
   .tm-dotline-tooltip {
-    top: -155px;
+    top: -260px;
     left: 65px;
 
     &::before {
-      height: 114px;
+      height: 230px;
       top: 45px;
       left: 3px;
     }
 
     &::after {
-      top: 158px;
+      top: 273px;
       left: 1px;
     }
     > div {
       &::before {
-        height: 97px;
+        height: 95px;
         top: 45px;
         left: 3px;
       }
@@ -509,28 +510,28 @@ input:checked + .tm-sliderbox:before {
 }
 
 .tm-tooltip-trigger-3 {
-  top: 0px;
-  left: 21px;
+  top: 250px;
+  left: 170px;
   width: 151px;
 
   .tm-dotline-tooltip {
-    top: -155px;
+    top: -350px;
     left: 65px;
 
     &::before {
-      height: 114px;
-      top: 45px;
+      height: 290px;
+      top: 70px;
       left: 3px;
     }
 
     &::after {
-      top: 158px;
+      top: 358px;
       left: 1px;
     }
     > div {
       &::before {
-        height: 97px;
-        top: 45px;
+        height: 32px;
+        top: 68px;
         left: 3px;
       }
     }
@@ -538,8 +539,8 @@ input:checked + .tm-sliderbox:before {
 }
 
 .tm-tooltip-trigger-4 {
-  top: 0px;
-  left: 21px;
+  top: 60px;
+  left: 300px;
   width: 151px;
 
   .tm-dotline-tooltip {
@@ -558,7 +559,7 @@ input:checked + .tm-sliderbox:before {
     }
     > div {
       &::before {
-        height: 97px;
+        height: 90px;
         top: 45px;
         left: 3px;
       }
@@ -567,29 +568,32 @@ input:checked + .tm-sliderbox:before {
 }
 
 .tm-tooltip-trigger-5 {
-  top: 0px;
-  left: 21px;
+  top: 335px;
+  left: 390px;
   width: 151px;
 
   .tm-dotline-tooltip {
-    top: -155px;
-    left: 65px;
+    top: 70px;
+    left: -160px;
 
     &::before {
-      height: 114px;
-      top: 45px;
-      left: 3px;
+      height: 16px;
+      top: -33px;
+      left: 260px;
     }
 
     &::after {
-      top: 158px;
-      left: 1px;
+      top: -37px;
+      left: 258px;
     }
     > div {
       &::before {
-        height: 97px;
-        top: 45px;
-        left: 3px;
+        width: 20px;
+        height: 29px;
+        top: -17px;
+        left: 240px;
+        border-bottom: 1px solid $default-color;
+        border-radius: 5px 0;
       }
     }
   }
