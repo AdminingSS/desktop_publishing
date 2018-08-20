@@ -6,8 +6,16 @@ body {
 }
 
 h1 {
+  font-family: $global-font-family;
   font-size: $heading-font-size;
   color: $default-color;
+  font-weight: bold;
+}
+
+h2 {
+  font-family: $global-font-family;
+  font-size: $heading-font-size;
+  color: $global-color;
   font-weight: bold;
 }
 
@@ -16,8 +24,19 @@ h6 {
   font-size: $global-font-size;
   color: $global-color;
   font-weight: bold;
+  line-height: 1.44;
   padding: 0;
   margin: 0;
+}
+
+.tm-text-small {
+  font-size: $small-font-size;
+  line-height: 1.57;
+}
+
+.jtooltip {
+  font-size: 16px;
+  line-height: 1.44;
 }
 
 .tm-button {
@@ -293,8 +312,9 @@ input:checked + .tm-sliderbox:before {
 
 .jtooltip-inner {
   background-color: $default-color;
-  width: 300px;
-  padding: 20px;
+  width: 315px;
+  min-width: 300px;
+  padding: 15px;
   border-radius: 5px;
   color: $global-color;
 }
@@ -409,8 +429,8 @@ input:checked + .tm-sliderbox:before {
     height: 50px;
     top: -40px;
     left: 290px;
-    border-bottom: 2px solid #e7aaff;
-    border-right: 2px solid #e7aaff;
+    border-bottom: 1px solid #e7aaff;
+    border-right: 1px solid #e7aaff;
     border-radius: 5px 0;
   }
 
@@ -452,7 +472,7 @@ input:checked + .tm-sliderbox:before {
     height: 110px;
     bottom: -120px;
     left: 0;
-    border-right: 2px solid #e7aaff;
+    border-right: 1px solid #e7aaff;
   }
 
   &::before {
@@ -493,7 +513,7 @@ input:checked + .tm-sliderbox:before {
     height: 290px;
     bottom: -300px;
     left: 20px;
-    border-right: 2px solid #e7aaff;
+    border-right: 1px solid #e7aaff;
   }
 
   &::before {
@@ -534,7 +554,7 @@ input:checked + .tm-sliderbox:before {
     height: 230px;
     bottom: -240px;
     left: 20px;
-    border-right: 2px solid #e7aaff;
+    border-right: 1px solid #e7aaff;
   }
 
   &::before {
@@ -575,7 +595,7 @@ input:checked + .tm-sliderbox:before {
     height: 130px;
     bottom: -130px;
     left: 20px;
-    border-right: 2px solid #e7aaff;
+    border-right: 1px solid #e7aaff;
   }
 
   &::before {
@@ -589,6 +609,11 @@ input:checked + .tm-sliderbox:before {
     background-color: #e7aaff;
     border-radius: 50%;
   }
+}
+
+.tm-font-tooltip {
+  font-size: $small-font-size;
+  line-height: 1.64;
 }
 
 //wavify
