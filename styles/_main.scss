@@ -53,6 +53,12 @@ h6 {
   box-shadow: 0 2px 4px -1px rgba(0, 0, 0, 0.1);
 
   color: $global-color;
+
+  &:hover, &:focus {
+    background-color: $primary-color;
+    color: $default-color;
+    transition: 0.7s;
+  }
 }
 
 .tm-button-primary {

@@ -518,6 +518,9 @@
 .dz-remove {
   font-size: 10px; }
 
+.uk-modal-body {
+  padding: 30px 40px; }
+
 body {
   font-family: "PT Sans", sans-serif;
   font-size: 16px;
@@ -563,6 +566,10 @@ h6 {
   background-color: #ffffff;
   box-shadow: 0 2px 4px -1px rgba(0, 0, 0, 0.1);
   color: #000000; }
+  .tm-button-default:hover, .tm-button-default:focus {
+    background-color: #d81cff;
+    color: #ffffff;
+    transition: 0.7s; }
 
 .tm-button-primary {
   width: 190px;
