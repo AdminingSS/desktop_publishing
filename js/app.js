@@ -91,6 +91,8 @@ $(document).ready(function () {
 
                 $filesCnt.val(fileCnt);
 
+                setTimeout(function() { $(".dz-image div").hide(); }, 3000);
+
                 $sendForm.valid();
             });
 

@@ -850,7 +850,7 @@ input:checked + .tm-sliderbox:before {
   position: absolute;
   width: 50px;
   height: 50px;
-  background-color: green;
+  background-color: transparent;
   display: block; }
   .tm-tooltip-trigger .tm-dotline-tooltip {
     display: none;
@@ -995,21 +995,26 @@ input:checked + .tm-sliderbox:before {
 .tm-z-100 {
   z-index: 100; }
 
-@media (max-width: 1199px) {
+@media (max-width: 1234px) {
   .tm-tooltip-trigger-1 {
-    left: 0; }
+    left: 0;
+    display: none; }
 
   .tm-tooltip-trigger-2 {
-    left: 0; }
+    left: 0;
+    display: none; }
 
   .tm-tooltip-trigger-3 {
-    left: 0; }
+    left: 0;
+    display: none; }
 
   .tm-tooltip-trigger-4 {
-    left: 0; }
+    left: 0;
+    display: none; }
 
   .tm-tooltip-trigger-5 {
-    left: 0; } }
+    left: 0;
+    display: none; } }
 @media (max-width: 1139px) {
   .tm-tooltip-trigger-1 {
     left: 0; }

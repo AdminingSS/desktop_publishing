@@ -406,8 +406,7 @@ input:checked + .tm-sliderbox:before {
   position: absolute;
   width: 50px;
   height: 50px;
-  //background-color: transparent;
-  background-color: green;
+  background-color: transparent;
   display: block;
 
   .tm-dotline-tooltip {
@@ -622,25 +621,31 @@ input:checked + .tm-sliderbox:before {
   z-index: 100;
 }
 
-@media (max-width: 1199px) {
+@media (max-width: 1234px) {
+  //@media (max-width: 1199px)
   .tm-tooltip-trigger-1 {
     left: 0;
+    display: none;
   }
 
   .tm-tooltip-trigger-2 {
     left: 0;
+    display: none;
   }
 
   .tm-tooltip-trigger-3 {
     left: 0;
+    display: none;
   }
 
   .tm-tooltip-trigger-4 {
     left: 0;
+    display: none;
   }
 
   .tm-tooltip-trigger-5 {
     left: 0;
+    display: none;
   }
 }
 
