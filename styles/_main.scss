@@ -67,6 +67,12 @@ h6 {
   background-color: $primary-color;
 
   color: $default-color;
+
+  &:hover, &:focus {
+    background-color: #ab1acf;
+    color: $default-color;
+    transition: 0.7s;
+  }
 }
 
 .tm-background-gradient {
@@ -420,7 +426,7 @@ input:checked + .tm-sliderbox:before {
       position: absolute;
       display: block;
       content: '';
-      border-right: 1px solid #e7aaff;
+      border-right: 1px solid #d81cff;
     }
 
     &::after {
@@ -429,7 +435,7 @@ input:checked + .tm-sliderbox:before {
       content: '';
       width: 5px;
       height: 5px;
-      background-color: #e7aaff;
+      background-color: #d81cff;
       border-radius: 50%;
     }
 
@@ -782,11 +788,73 @@ input:checked + .tm-sliderbox:before {
   }
 }
 
+.lds-ring-big {
+  display: inline-block;
+  position: relative;
+  width: 300px;
+  height: 300px;
+}
+.lds-ring-big div {
+  box-sizing: border-box;
+  display: block;
+  position: absolute;
+  width: 240px;
+  height: 240px;
+  margin: 30px;
+  border: 30px solid grey;
+  border-radius: 50%;
+  animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+  border-color: grey transparent transparent transparent;
+}
+.lds-ring-big div:nth-child(1) {
+  animation-delay: -0.45s;
+}
+.lds-ring-big div:nth-child(2) {
+  animation-delay: -0.3s;
+}
+.lds-ring-big div:nth-child(3) {
+  animation-delay: -0.15s;
+}
+@keyframes lds-ring {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
 .plus-btn {
   width: 60px;
   height: 60px;
-  background-color: #fff;
+  background-color: $default-color;
   color: $primary-color;
   line-height: 60px;
   cursor: pointer;
+  border-radius: 5px;
+
+  &:hover, &:focus {
+    background-color: $primary-color;
+    color: $default-color;
+    transition: 0.7s;
+  }
+}
+
+.tm-filenames {
+  top: -40px;
+  left: 0;
+  padding: 0 5px;
+  height: 30px;
+  min-width: 270px;
+  background-color: $default-color;
+  color: $global-color;
+  border-radius: 5px;
+}
+
+.tm-patch {
+  height: 25px;
+}
+
+.tm-text-global {
+  color: $global-color;
 }

@@ -4,6 +4,7 @@ $(document).ready(function () {
         let dropzone = null;
         let formDataArr = null;
         let fileCnt = null;
+        const $bigRoller = $('#bigRoller');
 
         //Validator
         (function () {
@@ -11,13 +12,14 @@ $(document).ready(function () {
                 submitHandler: function (form) {
                     formDataArr = $(form).serializeArray();
                     dropzone.processQueue();
+                    $bigRoller.show();
                 }
             });
 
             const $sendForm = $('#sendForm');
 
             const options = {
-                ignore : [],
+                ignore: [],
                 rules: {
                     filescnt: {
                         required: true
@@ -78,6 +80,10 @@ $(document).ready(function () {
                 '                    <div class="lds-ring"><div></div><div></div><div></div><div></div></div>\n' +
                 '                </div>\n' +
                 '            </div>\n' +
+                '            <div class="dz-details">\n' +
+                '                <div class="dz-size"><span data-dz-size></span></div>\n' +
+                '                <div class="dz-filename"><span data-dz-name></span></div>\n' +
+                '            </div>\n' +
                 '        </div>\n' +
                 '    </div>',
             });
@@ -94,7 +100,7 @@ $(document).ready(function () {
                 }
             });
 
-            dropzone.on('addedfile', function() {
+            dropzone.on('addedfile', function () {
 
                 $dzForma.append($plusBtn);
                 $plusBtn.show();
@@ -103,16 +109,19 @@ $(document).ready(function () {
 
                 $filesCnt.val(fileCnt);
 
-                setTimeout(function() { $(".dz-image div").hide(); }, 3000);
+                setTimeout(function () {
+                    $(".dz-image div").hide();
+                }, 3000);
 
                 $sendForm.valid();
             });
 
-            dropzone.on('removedfile', function() {
+            dropzone.on('removedfile', function () {
                 fileCnt--;
-                if (fileCnt <= 0)  {
+                if (fileCnt <= 0) {
                     fileCnt = null;
                     $plusBtn.hide();
+                    $("#fileNames").hide();
                 }
 
                 $filesCnt.val(fileCnt);
@@ -128,14 +137,18 @@ $(document).ready(function () {
                 });
             });
 
-            dropzone.on('successmultiple', function(){
+            dropzone.on('successmultiple', function () {
                 dropzone.removeAllFiles(true);
                 UIkit.modal($('#sendModal')).hide();
                 UIkit.modal($successModal).show();
             });
 
-            dropzone.on('error', function(){
+            dropzone.on('error', function () {
                 UIkit.modal($('#errorModal')).show();
+            });
+
+            dropzone.on('completemultiple', function () {
+                $bigRoller.hide();
             });
 
         })();
@@ -262,5 +275,47 @@ $(document).ready(function () {
             color: 'rgba(150, 97, 255, .8)',
             speed: .25
         });
+    })();
+
+    (function () {
+        // $('#dz-form').hover(function (evt) {
+        //
+        //         let target = evt.target;
+        //
+        //         while (!target.hasClass('tm-dz-form')) {
+        //             if (target.hasClass('dz-image')) {
+        //                 // нашли элемент, который нас интересует!
+        //                 $("#fileNames").html("hovered: " + evt.target.nodeName);
+        //                 return;
+        //             }
+        //             target = target.parentNode;
+        //         }
+        //     }
+        // );
+
+        $('#dz-form').on({
+            'mouseover': function (evt) {
+
+                let $target = $(evt.target);
+
+                while (!$target.hasClass('tm-dz-form')) {
+                    if ($target.hasClass('dz-image')) {
+                        // нашли элемент, который нас интересует!
+                        $("#fileNames").html($target.parent().find('.dz-filename span').html());
+                        $("#fileNames").show();
+                        return;
+                    }
+                    $target = $target.parent();
+                }
+            },
+
+            'mouseout': function () {
+                $("#fileNames").html('');
+                $("#fileNames").hide();
+
+            }
+
+        });
+
     })();
 });

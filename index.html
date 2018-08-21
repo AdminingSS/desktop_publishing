@@ -146,7 +146,7 @@
 </div>
 
 <div id="sendModal" class="uk-flex-top uk-width-auto" uk-modal>
-    <div class="tm-background-modal uk-modal-dialog uk-modal-body uk-border-rounded uk-margin-auto-vertical uk-text-center">
+    <div class="tm-background-modal uk-position-relative uk-modal-dialog uk-modal-body uk-border-rounded uk-margin-auto-vertical uk-text-center">
         <button class="tm-modal-close uk-modal-close-outside" type="button" uk-close>
             <i class="fas fa-times"></i>
         </button>
@@ -163,7 +163,7 @@
                 </div>
             </div>
         </div>
-        <form action="mail/mailer2.php" id="dz-form">
+        <form class="tm-dz-form" action="mail/mailer2.php" id="dz-form">
             <div class="fallback">
                 <input class="tm-input uk-border-rounded" name="file" type="file"
                        placeholder="Выберите файл для распознавания" multiple>
@@ -186,7 +186,7 @@
                               placeholder="Ваши пожелания"></textarea>
                 </div>
             </div>
-            <div class="uk-margin uk-width-1-1 uk-flex">
+            <div class="uk-hidden uk-margin uk-width-1-1 uk-flex">
                 <select class="tm-input tm-select uk-select uk-border-rounded" name="currency">
                     <option value="" disabled selected>Выберите валюту для оплаты</option>
                     <option value="rub">Рубли</option>
@@ -194,7 +194,7 @@
                     <option value="eur">Евро</option>
                 </select>
             </div>
-            <div class="uk-margin uk-margin-small-top uk-width-1-1">
+            <div class="uk-hidden uk-margin uk-margin-small-top uk-width-1-1">
                 <div class="uk-flex uk-flex-middle">
                     <label class="tm-switch">
                         <input type="checkbox" name="markup">
@@ -214,10 +214,19 @@
                     </label>
                 </div>
             </div>
+            <div class="tm-patch">
+
+            </div>
             <button type="submit" class="filesend-submit tm-button tm-button-primary uk-margin-small-bottom uk-button uk-border-rounded">
                 Отправить заявку
             </button>
         </form>
+        <div class="uk-position-absolute uk-position-center" style="display: none;" id="bigRoller">
+            <div class="lds-ring-big"><div></div><div></div><div></div><div></div></div>
+        </div>
+        <div class="tm-filenames uk-position-absolute" style="display: none;" id="fileNames">
+
+        </div>
     </div>
 </div>
 
@@ -226,8 +235,10 @@
         <button class="tm-modal-close uk-modal-close-outside" type="button" uk-close>
             <i class="fas fa-times"></i>
         </button>
-        <div class="uk-margin uk-width-1-1 uk-text-center">
-            <h2>Ваши файлы отправлены.</h2>
+        <div class="tm-text-global uk-margin uk-width-1-1 uk-text-left">
+            <h2 class="uk-margin">Ваша заявка успешно отправлена</h2>
+            <p class="uk-margin">Благодарим вас за использование нашего сервиса.</p>
+            <p class="uk-margin">Мы свяжемся с вами в течение часа.</p>
             <button type="submit" onclick="UIkit.modal($('#successModal')).hide();" class="tm-button tm-button-primary uk-button uk-border-rounded">
                 Закрыть
             </button>
@@ -257,6 +268,10 @@
                 <div class="uk-position-absolute">
                     <div class="lds-ring"><div></div><div></div><div></div><div></div></div>
                 </div>
+            </div>
+            <div class="dz-details">
+                <div class="dz-size"><span data-dz-size></span></div>
+                <div class="dz-filename"><span data-dz-name></span></div>
             </div>
         </div>
     </div>

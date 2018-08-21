@@ -14,6 +14,7 @@
 
 .dz-image img {
   height: 60px;
+  border-radius: 5px;
 }
 
 .dz-file-preview {
@@ -26,6 +27,39 @@
     -webkit-background-size: cover;
     background-size: contain;
     cursor: pointer;
+    border-radius: 5px;
+
+    &::after {
+      position: absolute;
+      display: block;
+      content: url("../images/urn.png");
+      top: 0;
+      left: 0;
+      height: 60px;
+      width: 60px;
+      border-radius: 5px;
+      background-color: $primary-color;
+      line-height: 60px;
+      opacity: 0;
+    }
+
+
+    &:hover, &:focus {
+      &::after {
+        position: absolute;
+        display: block;
+        content: url("../images/urn.png");
+        top: 0;
+        left: 0;
+        height: 60px;
+        width: 60px;
+        border-radius: 5px;
+        background-color: $primary-color;
+        line-height: 60px;
+        opacity: 1;
+        transition: 0.7s;
+      }
+    }
 
     >div {
       height: 60px;
