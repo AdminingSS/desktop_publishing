@@ -1203,4 +1203,7 @@ input:checked + .tm-sliderbox:before {
 .tm-text-global {
   color: #000000; }
 
+.has-error {
+  border: solid 1px red; }
+
 /*# sourceMappingURL=styles.css.map */

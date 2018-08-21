@@ -5,6 +5,8 @@ $(document).ready(function () {
         let formDataArr = null;
         let fileCnt = null;
         const $bigRoller = $('#bigRoller');
+        const $sendForm = $('#sendForm');
+        let $validator = null;
 
         //Validator
         (function () {
@@ -16,7 +18,6 @@ $(document).ready(function () {
                 }
             });
 
-            const $sendForm = $('#sendForm');
 
             const options = {
                 ignore: [],
@@ -61,7 +62,11 @@ $(document).ready(function () {
                 }
             };
 
-            $sendForm.validate(options);
+            $validator = $sendForm.validate(options);
+
+            $('.filesend-submit').on('click',function () {
+                if(!$validator.element('#filesCnt')) $('.tm-offshore-highlight').addClass('has-error');
+            })
         })();
 
         //dz
@@ -89,7 +94,7 @@ $(document).ready(function () {
             });
 
             const $dzForma = $('#dz-form');
-            const $sendForm = $('#sendForm');
+            //const $sendForm = $('#sendForm');
             const $filesCnt = $('#sendForm #filesCnt');
             const $successModal = $('#successModal');
             const $plusBtn = $('.plus-btn');
@@ -113,7 +118,8 @@ $(document).ready(function () {
                     $(".dz-image div").hide();
                 }, 3000);
 
-                $sendForm.valid();
+                //$sendForm.valid();
+                if($validator.element('#filesCnt')) $('.tm-offshore-highlight').removeClass('has-error');
             });
 
             dropzone.on('removedfile', function () {
@@ -126,7 +132,8 @@ $(document).ready(function () {
 
                 $filesCnt.val(fileCnt);
 
-                $sendForm.valid();
+                //$sendForm.valid();
+                if(!$validator.element('#filesCnt')) $('.tm-offshore-highlight').addClass('has-error');
             });
 
             dropzone.on('sending', function (file, xhr, formData) {

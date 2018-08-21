@@ -858,3 +858,7 @@ input:checked + .tm-sliderbox:before {
 .tm-text-global {
   color: $global-color;
 }
+
+.has-error {
+  border: solid 1px red;
+}
