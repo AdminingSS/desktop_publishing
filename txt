@@ -1,0 +1,10 @@
+val = 'xxxxfgh/bvt';
+val.substring(val.lastIndexOf('/')+1,val.length
+
+var val='http://localhost/site/someimage.jpg'
+2
+alert(val.substring(val.lastIndexOf('/')+1,val.length))
+
+var val = 'http://localhost/site/someimage.jpg', split = val.split('/');
+2
+alert(split[split.length-1]);
