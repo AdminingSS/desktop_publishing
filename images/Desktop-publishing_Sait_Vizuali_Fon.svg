@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 22.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Слой_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 1440 863" style="enable-background:new 0 0 1440 863;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:url(#Rectangle_1_);}
+	.st1{fill:url(#Fill-1_1_);}
+	.st2{fill:url(#Fill-4_1_);}
+	.st3{fill:url(#Fill-6_1_);}
+	.st4{fill:url(#Fill-8_1_);}
+</style>
+<g id="Hero-Page">
+	<g id="Group-18" transform="translate(-381.000000, -152.000000)">
+		<g id="Background" transform="translate(339.000000, 122.000000)">
+			
+				<linearGradient id="Rectangle_1_" gradientUnits="userSpaceOnUse" x1="456.7421" y1="858.0328" x2="455.7421" y2="857.0192" gradientTransform="matrix(1627 0 0 -1221 -741494 1047654)">
+				<stop  offset="0" style="stop-color:#B046E3"/>
+				<stop  offset="1" style="stop-color:#7821C4"/>
+			</linearGradient>
+			<rect id="Rectangle" x="4" class="st0" width="1627" height="1221"/>
+			<g id="Clip-2">
+			</g>
+			
+				<linearGradient id="Fill-1_1_" gradientUnits="userSpaceOnUse" x1="456.7101" y1="858.1104" x2="455.7101" y2="856.6212" gradientTransform="matrix(1659 0 0 -432 -756090 370706)">
+				<stop  offset="0" style="stop-color:#C32AFF"/>
+				<stop  offset="1" style="stop-color:#9013FE"/>
+			</linearGradient>
+			<path id="Fill-1" class="st1" d="M1659,40.6c0,0-189.5-59.9-388,0C1072.4,100.5,940.1,176.1,640,228.2C340,280.3,0,150,0,150v296
+				h1659V40.6z"/>
+			
+				<linearGradient id="Fill-4_1_" gradientUnits="userSpaceOnUse" x1="456.7957" y1="858.1001" x2="455.7957" y2="856.9337" gradientTransform="matrix(1658 0 0 -501 -755634 430143)">
+				<stop  offset="0" style="stop-color:#DE20FF"/>
+				<stop  offset="0.7205" style="stop-color:#C413FF"/>
+				<stop  offset="1" style="stop-color:#BA0EFF"/>
+			</linearGradient>
+			<path id="Fill-4" class="st2" d="M0,365.4c0,0,244-115.2,379.1-111.7c141.2,3.7,311.8,167.1,488.1,163.6
+				c176.4-3.5,338-153,490.9-167.2C1511,236,1658,351.6,1658,351.6V750H0V365.4z"/>
+			
+				<linearGradient id="Fill-6_1_" gradientUnits="userSpaceOnUse" x1="456.8073" y1="858.1145" x2="455.7436" y2="857.0179" gradientTransform="matrix(1658 0 0 -535 -755634 459426)">
+				<stop  offset="0" style="stop-color:#C32AFF"/>
+				<stop  offset="1" style="stop-color:#9013FE"/>
+			</linearGradient>
+			<path id="Fill-6" class="st3" d="M0,388.9c0,0,189.4-64.9,387.8,0s330.7,146.8,630.5,203.3c299.8,56.5,639.7-84.7,639.7-84.7V895
+				H0V388.9z"/>
+			
+				<linearGradient id="Fill-8_1_" gradientUnits="userSpaceOnUse" x1="456.8749" y1="858.3045" x2="455.9222" y2="856.9647" gradientTransform="matrix(1658 0 0 -431.0001 -755634 370454.0625)">
+				<stop  offset="0" style="stop-color:#E024F2"/>
+				<stop  offset="1" style="stop-color:#BD10E0"/>
+			</linearGradient>
+			<path id="Fill-8" class="st4" d="M1658,646.6c0,0-189.4-59.8-387.8,0c-198.4,59.8-330.7,135.1-630.5,187.1
+				c-299.8,52-639.7-78-639.7-78V1051h1658V646.6z"/>
+		</g>
+	</g>
+</g>
+</svg>

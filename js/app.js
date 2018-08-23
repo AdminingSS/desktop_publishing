@@ -266,23 +266,23 @@ $(document).ready(function () {
     })();
 
     //waves
-    (function () {
-        $('#feel-the-wave').wavify({
-            height: 80,
-            bones: 4,
-            amplitude: 60,
-            color: '#B289EF',
-            speed: .15
-        });
-
-        $('#feel-the-wave-two').wavify({
-            height: 60,
-            bones: 3,
-            amplitude: 40,
-            color: 'rgba(150, 97, 255, .8)',
-            speed: .25
-        });
-    })();
+    // (function () {
+    //     $('#feel-the-wave').wavify({
+    //         height: 80,
+    //         bones: 4,
+    //         amplitude: 60,
+    //         color: '#B289EF',
+    //         speed: .15
+    //     });
+    //
+    //     $('#feel-the-wave-two').wavify({
+    //         height: 60,
+    //         bones: 3,
+    //         amplitude: 40,
+    //         color: 'rgba(150, 97, 255, .8)',
+    //         speed: .25
+    //     });
+    // })();
 
     (function () {
         // $('#dz-form').hover(function (evt) {

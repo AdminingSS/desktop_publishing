@@ -1206,4 +1206,13 @@ input:checked + .tm-sliderbox:before {
 .has-error {
   border: solid 1px red; }
 
+.tm-background-animation {
+  animation: bg-anim 1s; }
+
+@keyframes bg-anim {
+  0% {
+    width: 110%; }
+  100% {
+    width: 100%; } }
+
 /*# sourceMappingURL=styles.css.map */
