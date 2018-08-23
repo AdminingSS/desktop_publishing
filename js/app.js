@@ -148,6 +148,8 @@ $(document).ready(function () {
                 dropzone.removeAllFiles(true);
                 UIkit.modal($('#sendModal')).hide();
                 UIkit.modal($successModal).show();
+                $validator.resetForm();
+                $('.tm-offshore-highlight').removeClass('has-error');
             });
 
             dropzone.on('error', function () {

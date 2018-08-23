@@ -359,8 +359,6 @@ input:checked + .tm-sliderbox:before {
   }
 }
 
-
-
 .jtooltip-t .jtooltip-arrow {
   -webkit-animation-name: bounce-down;
   animation-name: bounce-down;
@@ -841,7 +839,7 @@ input:checked + .tm-sliderbox:before {
 }
 
 .tm-filenames {
-  top: -40px;
+  top: -60px;
   left: 0;
   padding: 0 5px;
   height: 30px;
@@ -849,6 +847,7 @@ input:checked + .tm-sliderbox:before {
   background-color: $default-color;
   color: $global-color;
   border-radius: 5px;
+  line-height: 28px;
 }
 
 .tm-patch {
